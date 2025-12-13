@@ -20,7 +20,7 @@ export async function FeaturedCollections() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {collections.map((collection) => (
+          {collections.map((collection: { id: string; slug: string; title: string; description: string | null; image: string | null }) => (
             <Link key={collection.id} href={`/collections/${collection.slug}`}>
               <Card className="group overflow-hidden transition-all hover:shadow-lg">
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
