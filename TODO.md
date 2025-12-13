@@ -3,8 +3,6 @@
 > Modern headless e-commerce built with Next.js App Router, React Server Components, and Stripe.
 > Inspired by Nextmerce aesthetics, production-ready architecture.
 
----
-
 ## Phase 1 – Setup & Foundations
 
 - [ ] Initialize Next.js 14+ project with App Router (`npx create-next-app@latest --typescript --tailwind --eslint --app --src-dir=false`)
