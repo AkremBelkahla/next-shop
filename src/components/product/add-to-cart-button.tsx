@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ShoppingCart, Minus, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { addToCartAction } from '@/app/actions'
 
 interface AddToCartButtonProps {
   productId: string
@@ -11,6 +12,7 @@ interface AddToCartButtonProps {
   image?: string
   variantId?: string
   variantTitle?: string
+  disabled?: boolean
 }
 
 export function AddToCartButton({
@@ -20,26 +22,26 @@ export function AddToCartButton({
   image,
   variantId,
   variantTitle,
+  disabled,
 }: AddToCartButtonProps) {
   const [quantity, setQuantity] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
 
   const handleAddToCart = async () => {
     setIsLoading(true)
-    
-    await new Promise(resolve => setTimeout(resolve, 500))
-    
-    console.log('Add to cart:', {
-      productId,
-      variantId,
-      quantity,
-      price,
-      title: productTitle,
-      image,
-      variant: variantTitle ? { title: variantTitle } : undefined,
-    })
-    
-    setIsLoading(false)
+    try {
+      await addToCartAction({
+        productId,
+        variantId,
+        quantity,
+        price,
+        title: productTitle,
+        image,
+        variant: variantTitle ? { title: variantTitle } : undefined,
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -69,7 +71,7 @@ export function AddToCartButton({
         size="lg"
         className="w-full"
         onClick={handleAddToCart}
-        disabled={isLoading}
+        disabled={isLoading || disabled}
       >
         <ShoppingCart className="mr-2 h-5 w-5" />
         {isLoading ? 'Adding...' : 'Add to Cart'}
