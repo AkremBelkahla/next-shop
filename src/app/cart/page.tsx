@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { getCart } from '@/lib/cart'
@@ -40,7 +41,17 @@ export default async function CartPage() {
             <div className="space-y-4">
               {cart.items.map((item) => (
                 <div key={`${item.productId}-${item.variantId}`} className="flex gap-4 rounded-lg border p-4">
-                  <div className="h-24 w-24 flex-shrink-0 rounded-lg bg-muted" />
+                  <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg bg-muted">
+                    {item.image && (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                        sizes="96px"
+                      />
+                    )}
+                  </div>
                   <div className="flex flex-1 flex-col">
                     <h3 className="font-semibold">{item.title}</h3>
                     {item.variant && (

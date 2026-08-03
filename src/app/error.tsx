@@ -21,7 +21,7 @@ export default function Error({
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-3xl font-bold tracking-tight">Something went wrong!</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            We're sorry, but something unexpected happened.
+            We&apos;re sorry, but something unexpected happened.
           </p>
           <Button size="lg" className="mt-8" onClick={reset}>
             Try Again
