@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ThemeScript } from "@/components/theme/theme-script";
 import { BackToTop } from "@/components/ui/back-to-top";
+import { CookieConsent } from "@/components/ui/cookie-consent";
 import { CartProvider } from "@/components/cart/cart-provider";
 import { CartSidebar } from "@/components/cart/cart-sidebar";
 import { getCart } from "@/lib/cart";
@@ -40,6 +41,7 @@ export default async function RootLayout({
           <CartSidebar />
         </CartProvider>
         <BackToTop />
+        <CookieConsent />
       </body>
     </html>
   );

@@ -97,6 +97,9 @@ export function Footer() {
               <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">
                 Privacy
               </Link>
+              <Link href="/legal-notice" className="text-sm text-muted-foreground hover:text-foreground">
+                Legal Notice
+              </Link>
             </div>
           </div>
         </div>
