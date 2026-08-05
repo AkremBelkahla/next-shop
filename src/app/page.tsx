@@ -1,4 +1,4 @@
-import { HeroSection } from '@/components/home/hero-section'
+import { HeroSlider } from '@/components/home/hero-slider'
 import { FeaturedCollections } from '@/components/home/featured-collections'
 import { FeaturedProducts } from '@/components/home/featured-products'
 import { ValueProps } from '@/components/home/value-props'
@@ -6,7 +6,7 @@ import { ValueProps } from '@/components/home/value-props'
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <HeroSlider />
       <FeaturedCollections />
       <FeaturedProducts />
       <ValueProps />

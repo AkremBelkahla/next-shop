@@ -1,4 +1,5 @@
 import { Container } from '@/components/ui/container'
+import { SectionHeading } from '@/components/ui/section-heading'
 import { ProductGrid } from '@/components/product/product-grid'
 import { cms } from '@/lib/cms'
 
@@ -6,16 +7,13 @@ export async function FeaturedProducts() {
   const products = await cms.products.getFeatured(8)
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="bg-muted/30 py-16 md:py-24">
       <Container>
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Featured Products
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Handpicked favorites from our collection
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Featured"
+          title="Featured Products"
+          description="Handpicked favorites from our collection"
+        />
 
         <ProductGrid products={products} />
       </Container>

@@ -1,13 +1,24 @@
 'use server'
 
 import { redirect } from 'next/navigation'
-import { addToCart } from '@/lib/cart'
-import { getCart } from '@/lib/cart'
+import { addToCart, getCart, removeFromCart, updateQuantity } from '@/lib/cart'
 import { stripe } from '@/lib/stripe'
 import type { CartItem } from '@/types/product'
 
 export async function addToCartAction(item: CartItem) {
-  await addToCart(item)
+  return addToCart(item)
+}
+
+export async function removeFromCartAction(productId: string, variantId?: string) {
+  return removeFromCart(productId, variantId)
+}
+
+export async function updateQuantityAction(
+  productId: string,
+  quantity: number,
+  variantId?: string
+) {
+  return updateQuantity(productId, quantity, variantId)
 }
 
 export async function createCheckoutSessionAction() {

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { ShoppingCart, Minus, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { addToCartAction } from '@/app/actions'
+import { useCart } from '@/components/cart/cart-provider'
 
 interface AddToCartButtonProps {
   productId: string
@@ -26,11 +27,12 @@ export function AddToCartButton({
 }: AddToCartButtonProps) {
   const [quantity, setQuantity] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
+  const { setCart, openCart } = useCart()
 
   const handleAddToCart = async () => {
     setIsLoading(true)
     try {
-      await addToCartAction({
+      const updatedCart = await addToCartAction({
         productId,
         variantId,
         quantity,
@@ -39,6 +41,8 @@ export function AddToCartButton({
         image,
         variant: variantTitle ? { title: variantTitle } : undefined,
       })
+      setCart(updatedCart)
+      openCart()
     } finally {
       setIsLoading(false)
     }

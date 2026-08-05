@@ -270,6 +270,70 @@ const rawProducts: RawProduct[] = [
     ],
     collectionSlugs: ['bestsellers', 'accessories', 'sale'],
   },
+  {
+    id: 'prod_wireless-earbuds',
+    slug: 'wireless-earbuds',
+    title: 'True Wireless Earbuds',
+    description:
+      'Compact true wireless earbuds with active noise cancellation, IPX4 water resistance, and 28-hour total battery life with the charging case. Touch controls and low-latency mode for gaming.',
+    price: 14900,
+    compareAtPrice: 17900,
+    featured: true,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800', alt: 'True Wireless Earbuds', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1590658006821-27f6b1eae4e6?w=800', alt: 'True Wireless Earbuds - Case', position: 1 },
+    ],
+    variants: [
+      { title: 'Black', sku: 'TWE-BLK', price: 14900, inventory: 40, options: { color: 'Black' } },
+      { title: 'White', sku: 'TWE-WHT', price: 14900, inventory: 35, options: { color: 'White' } },
+    ],
+    collectionSlugs: ['new-arrivals', 'bestsellers'],
+  },
+  {
+    id: 'prod_wool-beanie',
+    slug: 'wool-beanie',
+    title: 'Ribbed Wool Beanie',
+    description:
+      'Soft ribbed-knit beanie made from responsibly sourced merino wool. Stretchy fit, fleece-lined headband for extra warmth without the itch.',
+    price: 3200,
+    compareAtPrice: null,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=800', alt: 'Ribbed Wool Beanie', position: 0 },
+    ],
+    variants: [
+      { title: 'Charcoal', sku: 'RWB-CHR', price: 3200, inventory: 50, options: { color: 'Charcoal' } },
+      { title: 'Camel', sku: 'RWB-CML', price: 3200, inventory: 45, options: { color: 'Camel' } },
+      { title: 'Burgundy', sku: 'RWB-BUR', price: 3200, inventory: 40, options: { color: 'Burgundy' } },
+    ],
+    collectionSlugs: ['accessories'],
+  },
+  {
+    id: 'prod_leather-belt',
+    slug: 'leather-belt',
+    title: 'Full-Grain Leather Belt',
+    description:
+      'Classic full-grain leather belt with a solid brass buckle. Hand-cut and burnished edges for a refined finish that ages beautifully over time.',
+    price: 4500,
+    compareAtPrice: 5900,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800', alt: 'Full-Grain Leather Belt', position: 0 },
+    ],
+    variants: [
+      { title: 'Brown / 32"', sku: 'LB-BRN-32', price: 4500, inventory: 25, options: { color: 'Brown', size: '32"' } },
+      { title: 'Brown / 34"', sku: 'LB-BRN-34', price: 4500, inventory: 25, options: { color: 'Brown', size: '34"' } },
+      { title: 'Black / 32"', sku: 'LB-BLK-32', price: 4500, inventory: 25, options: { color: 'Black', size: '32"' } },
+      { title: 'Black / 34"', sku: 'LB-BLK-34', price: 4500, inventory: 25, options: { color: 'Black', size: '34"' } },
+    ],
+    collectionSlugs: ['bestsellers', 'accessories', 'sale'],
+  },
 ]
 
 export const productsData: ProductWithRelations[] = rawProducts.map(

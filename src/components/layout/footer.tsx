@@ -29,14 +29,14 @@ export function Footer() {
         <div className="py-12 md:py-16">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="col-span-2 md:col-span-1">
-              <h3 className="text-lg font-bold">Next Shop</h3>
+              <h3 className="text-lg font-bold tracking-tight">Next Shop</h3>
               <p className="mt-4 text-sm text-muted-foreground">
                 Modern e-commerce built with Next.js and React Server Components.
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold">Shop</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/80">Shop</h4>
               <ul className="mt-4 space-y-3">
                 {footerLinks.shop.map((link) => (
                   <li key={link.name}>
@@ -52,7 +52,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold">Company</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/80">Company</h4>
               <ul className="mt-4 space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
@@ -68,7 +68,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold">Support</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/80">Support</h4>
               <ul className="mt-4 space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.name}>

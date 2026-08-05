@@ -26,13 +26,16 @@ const features = [
 
 export function ValueProps() {
   return (
-    <section className="border-y bg-muted/30 py-12">
+    <section className="py-16">
       <Container>
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {features.map((feature) => (
-            <div key={feature.title} className="text-center">
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <feature.icon className="h-6 w-6 text-primary" />
+            <div
+              key={feature.title}
+              className="group rounded-2xl border border-border/60 bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+            >
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-accent/20 to-accent/5 transition-colors duration-300 group-hover:from-accent/30 group-hover:to-accent/10">
+                <feature.icon className="h-6 w-6 text-accent" />
               </div>
               <h3 className="mt-4 font-semibold">{feature.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{feature.description}</p>
