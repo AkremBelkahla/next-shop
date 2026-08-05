@@ -1,52 +1,46 @@
-import { prisma } from './prisma'
-import type { CollectionWithProducts } from '@/types/product'
+import { collectionsData, productsData } from './data/seed-data'
+import type { Collection, CollectionWithProducts } from '@/types/product'
+
+function sortByCreatedAtDesc(collections: Collection[]): Collection[] {
+  return [...collections].sort(
+    (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
+  )
+}
 
 export async function getCollections(options?: {
   featured?: boolean
-}) {
+}): Promise<Collection[]> {
   const { featured } = options ?? {}
 
-  return prisma.collection.findMany({
-    where: {
-      ...(featured !== undefined && { featured }),
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-  })
+  const results = collectionsData.filter(
+    (collection) => featured === undefined || collection.featured === featured
+  )
+
+  return sortByCreatedAtDesc(results)
 }
 
 export async function getCollectionBySlug(
   slug: string
 ): Promise<CollectionWithProducts | null> {
-  return prisma.collection.findUnique({
-    where: { slug },
-    include: {
-      products: {
-        include: {
-          images: {
-            orderBy: {
-              position: 'asc',
-            },
-          },
-          variants: true,
-          collections: true,
-        },
-      },
-    },
-  })
+  const collection = collectionsData.find((c) => c.slug === slug)
+
+  if (!collection) {
+    return null
+  }
+
+  const products = productsData
+    .filter((product) => product.collections.some((c) => c.slug === slug))
+    .map((product) => ({
+      ...product,
+      images: [...product.images].sort((a, b) => a.position - b.position),
+    }))
+
+  return { ...collection, products }
 }
 
 export async function getFeaturedCollections(
   limit: number = 3
-) {
-  return prisma.collection.findMany({
-    where: {
-      featured: true,
-    },
-    take: limit,
-    orderBy: {
-      createdAt: 'desc',
-    },
-  })
+): Promise<Collection[]> {
+  const results = collectionsData.filter((c) => c.featured)
+  return sortByCreatedAtDesc(results).slice(0, limit)
 }

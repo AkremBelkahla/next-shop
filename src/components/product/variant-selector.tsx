@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import type { ProductVariant } from '@prisma/client'
+import type { ProductVariant } from '@/types/product'
 
 interface VariantSelectorProps {
   variants: ProductVariant[]

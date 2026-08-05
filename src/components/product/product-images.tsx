@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import type { ProductImage } from '@prisma/client'
+import type { ProductImage } from '@/types/product'
 
 interface ProductImagesProps {
   images: ProductImage[]

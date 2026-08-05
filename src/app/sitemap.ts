@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { cms } from '@/lib/cms'
 
+export const dynamic = 'force-dynamic'
+
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

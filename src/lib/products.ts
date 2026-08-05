@@ -1,5 +1,22 @@
-import { prisma } from './prisma'
+import { productsData } from './data/seed-data'
 import type { ProductWithRelations } from '@/types/product'
+
+function sortByImagePosition(
+  product: ProductWithRelations
+): ProductWithRelations {
+  return {
+    ...product,
+    images: [...product.images].sort((a, b) => a.position - b.position),
+  }
+}
+
+function sortByCreatedAtDesc(
+  products: ProductWithRelations[]
+): ProductWithRelations[] {
+  return [...products].sort(
+    (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
+  )
+}
 
 export async function getProducts(options?: {
   featured?: boolean
@@ -9,49 +26,36 @@ export async function getProducts(options?: {
 }): Promise<ProductWithRelations[]> {
   const { featured, collectionSlug, limit, offset } = options ?? {}
 
-  return prisma.product.findMany({
-    where: {
-      ...(featured !== undefined && { featured }),
-      ...(collectionSlug && {
-        collections: {
-          some: {
-            slug: collectionSlug,
-          },
-        },
-      }),
-    },
-    include: {
-      images: {
-        orderBy: {
-          position: 'asc',
-        },
-      },
-      variants: true,
-      collections: true,
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-    ...(limit && { take: limit }),
-    ...(offset && { skip: offset }),
+  let results = productsData.filter((product) => {
+    if (featured !== undefined && product.featured !== featured) {
+      return false
+    }
+    if (
+      collectionSlug &&
+      !product.collections.some((c) => c.slug === collectionSlug)
+    ) {
+      return false
+    }
+    return true
   })
+
+  results = sortByCreatedAtDesc(results).map(sortByImagePosition)
+
+  if (offset) {
+    results = results.slice(offset)
+  }
+  if (limit) {
+    results = results.slice(0, limit)
+  }
+
+  return results
 }
 
 export async function getProductBySlug(
   slug: string
 ): Promise<ProductWithRelations | null> {
-  return prisma.product.findUnique({
-    where: { slug },
-    include: {
-      images: {
-        orderBy: {
-          position: 'asc',
-        },
-      },
-      variants: true,
-      collections: true,
-    },
-  })
+  const product = productsData.find((p) => p.slug === slug)
+  return product ? sortByImagePosition(product) : null
 }
 
 export async function getFeaturedProducts(
@@ -63,73 +67,33 @@ export async function getFeaturedProducts(
 export async function searchProducts(
   query: string
 ): Promise<ProductWithRelations[]> {
-  return prisma.product.findMany({
-    where: {
-      OR: [
-        {
-          title: {
-            contains: query,
-            mode: 'insensitive',
-          },
-        },
-        {
-          description: {
-            contains: query,
-            mode: 'insensitive',
-          },
-        },
-      ],
-    },
-    include: {
-      images: {
-        orderBy: {
-          position: 'asc',
-        },
-      },
-      variants: true,
-      collections: true,
-    },
-    take: 20,
-  })
+  const lowerQuery = query.toLowerCase()
+
+  const results = productsData.filter(
+    (product) =>
+      product.title.toLowerCase().includes(lowerQuery) ||
+      product.description.toLowerCase().includes(lowerQuery)
+  )
+
+  return sortByCreatedAtDesc(results).map(sortByImagePosition).slice(0, 20)
 }
 
 export async function getRelatedProducts(
   productId: string,
   limit: number = 4
 ): Promise<ProductWithRelations[]> {
-  const product = await prisma.product.findUnique({
-    where: { id: productId },
-    include: {
-      collections: true,
-    },
-  })
+  const product = productsData.find((p) => p.id === productId)
 
   if (!product || product.collections.length === 0) {
     return []
   }
 
-  return prisma.product.findMany({
-    where: {
-      id: {
-        not: productId,
-      },
-      collections: {
-        some: {
-          id: {
-            in: product.collections.map((c: { id: string }) => c.id),
-          },
-        },
-      },
-    },
-    include: {
-      images: {
-        orderBy: {
-          position: 'asc',
-        },
-      },
-      variants: true,
-      collections: true,
-    },
-    take: limit,
-  })
+  const collectionIds = new Set(product.collections.map((c) => c.id))
+
+  const results = productsData.filter(
+    (p) =>
+      p.id !== productId && p.collections.some((c) => collectionIds.has(c.id))
+  )
+
+  return sortByCreatedAtDesc(results).map(sortByImagePosition).slice(0, limit)
 }

@@ -1,4 +1,43 @@
-import type { Product, ProductVariant, ProductImage, Collection } from '@prisma/client'
+export interface Product {
+  id: string
+  slug: string
+  title: string
+  description: string
+  price: number
+  compareAtPrice: number | null
+  featured: boolean
+  createdAt: Date
+  updatedAt: Date
+}
+
+export interface ProductVariant {
+  id: string
+  productId: string
+  title: string
+  sku: string
+  price: number
+  inventory: number
+  options: Record<string, string> | null
+}
+
+export interface ProductImage {
+  id: string
+  productId: string
+  url: string
+  alt: string
+  position: number
+}
+
+export interface Collection {
+  id: string
+  slug: string
+  title: string
+  description: string | null
+  image: string | null
+  featured: boolean
+  createdAt: Date
+  updatedAt: Date
+}
 
 export type ProductWithRelations = Product & {
   images: ProductImage[]
