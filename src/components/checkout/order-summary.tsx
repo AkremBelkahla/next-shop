@@ -187,7 +187,7 @@ export function OrderSummary({ subtotal, mode }: OrderSummaryProps) {
 
   /* ----- render ------------------------------------------------------------ */
   return (
-    <div className="rounded-lg border p-6 space-y-4">
+    <div className="rounded-none border p-6 space-y-4">
       <h2 className="text-lg font-semibold">Order Summary</h2>
 
       {/* Coupon input */}

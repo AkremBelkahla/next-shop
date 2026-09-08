@@ -52,7 +52,7 @@ export default function FaqPage() {
 
           <div className="mt-10 space-y-6">
             {faqs.map((faq) => (
-              <div key={faq.q} className="rounded-lg border p-6">
+              <div key={faq.q} className="rounded-none border p-6">
                 <h2 className="text-base font-semibold text-foreground">{faq.q}</h2>
                 <p className="mt-2 text-sm text-muted-foreground">{faq.a}</p>
               </div>

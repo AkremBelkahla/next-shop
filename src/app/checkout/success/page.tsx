@@ -36,7 +36,7 @@ export default function CheckoutSuccessPage() {
         </div>
 
         {order && (
-          <div className="mx-auto mt-10 max-w-md rounded-lg border p-6 text-left">
+          <div className="mx-auto mt-10 max-w-md rounded-none border p-6 text-left">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold">Order Summary</h2>
               <span className="text-xs text-muted-foreground">

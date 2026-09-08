@@ -7,10 +7,10 @@ export default function Loading() {
       <Container>
         <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
           <div className="space-y-4">
-            <Skeleton className="aspect-square w-full rounded-lg" />
+            <Skeleton className="aspect-square w-full rounded-none" />
             <div className="grid grid-cols-4 gap-4">
               {Array.from({ length: 4 }).map((_, i) => (
-                <Skeleton key={i} className="aspect-square rounded-lg" />
+                <Skeleton key={i} className="aspect-square rounded-none" />
               ))}
             </div>
           </div>

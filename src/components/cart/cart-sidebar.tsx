@@ -64,7 +64,7 @@ export function CartSidebar() {
                   key={`${item.productId}-${item.variantId ?? ''}`}
                   className="flex gap-3 border-b pb-4 last:border-b-0"
                 >
-                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-muted">
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-none bg-muted">
                     {item.image && (
                       <Image
                         src={item.image}

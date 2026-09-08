@@ -36,8 +36,8 @@ export default async function CheckoutPage() {
           <div className="lg:col-span-2">
             <div className="space-y-4">
               {cart.items.map((item) => (
-                <div key={`${item.productId}-${item.variantId}`} className="flex gap-4 rounded-lg border p-4">
-                  <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-muted">
+                <div key={`${item.productId}-${item.variantId}`} className="flex gap-4 rounded-none border p-4">
+                  <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-none bg-muted">
                     {item.image && (
                       <Image
                         src={item.image}

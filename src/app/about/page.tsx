@@ -50,7 +50,7 @@ export default function AboutPage() {
           {values.map((value) => (
             <div
               key={value.title}
-              className="rounded-2xl border border-border/60 bg-card p-6 text-center shadow-sm"
+              className="rounded-none border border-border/60 bg-card p-6 text-center shadow-sm"
             >
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-accent/20 to-accent/5">
                 <value.icon className="h-6 w-6 text-accent" />

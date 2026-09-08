@@ -21,7 +21,7 @@ export function ProductImages({ images, productTitle }: ProductImagesProps) {
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-muted">
+      <div className="relative aspect-square w-full overflow-hidden rounded-none bg-muted">
         <Image
           src={images[selectedImage]?.url || ''}
           alt={images[selectedImage]?.alt || productTitle}
@@ -39,7 +39,7 @@ export function ProductImages({ images, productTitle }: ProductImagesProps) {
               key={image.id}
               onClick={() => setSelectedImage(index)}
               className={cn(
-                'relative aspect-square overflow-hidden rounded-lg bg-muted transition-all',
+                'relative aspect-square overflow-hidden rounded-none bg-muted transition-all',
                 selectedImage === index
                   ? 'ring-2 ring-primary ring-offset-2'
                   : 'opacity-70 hover:opacity-100'

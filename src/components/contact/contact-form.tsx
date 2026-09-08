@@ -31,7 +31,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border bg-card p-6 shadow-sm">
+    <form onSubmit={handleSubmit} className="space-y-4 rounded-none border bg-card p-6 shadow-sm">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-1.5">
           <label htmlFor="name" className="text-sm font-medium">

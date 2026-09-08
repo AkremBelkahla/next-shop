@@ -27,7 +27,7 @@ export default function AccountPage() {
         </p>
 
         {/* Loyalty points balance */}
-        <div className="mt-8 flex items-center gap-4 rounded-lg border bg-gradient-to-br from-accent/10 to-accent/5 p-6">
+        <div className="mt-8 flex items-center gap-4 rounded-none border bg-gradient-to-br from-accent/10 to-accent/5 p-6">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent/15">
             <Sparkles className="h-6 w-6 text-accent" />
           </div>
@@ -45,7 +45,7 @@ export default function AccountPage() {
         <h2 className="mt-10 text-xl font-semibold">Order History</h2>
 
         {orders.length === 0 ? (
-          <div className="mt-6 flex flex-col items-center gap-4 rounded-lg border border-dashed py-16 text-center">
+          <div className="mt-6 flex flex-col items-center gap-4 rounded-none border border-dashed py-16 text-center">
             <PackageOpen className="h-10 w-10 text-muted-foreground" />
             <p className="text-muted-foreground">You haven&apos;t placed any orders yet.</p>
             <Button asChild>
@@ -55,7 +55,7 @@ export default function AccountPage() {
         ) : (
           <div className="mt-6 space-y-4">
             {orders.map((order) => (
-              <div key={order.id} className="rounded-lg border p-6">
+              <div key={order.id} className="rounded-none border p-6">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div>
                     <p className="font-semibold">Order #{order.id.slice(0, 8)}</p>
