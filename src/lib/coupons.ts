@@ -74,6 +74,8 @@ export function applyCoupon(
   if (coupon.minSubtotal && subtotal < coupon.minSubtotal) {
     return {
       coupon,
+      discount: 0,
+      freeShipping: false,
       error: `Requires a minimum subtotal of €${(coupon.minSubtotal / 100).toFixed(0)}.`,
     }
   }

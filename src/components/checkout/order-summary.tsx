@@ -20,6 +20,7 @@ import {
 } from '@/lib/loyalty'
 import { clearCartAction } from '@/app/actions'
 import { useCart } from '@/components/cart/cart-provider'
+import { invalidateOrdersCache } from '@/lib/orders-store'
 import {
   COUPON_STORAGE_KEY,
   ORDERS_STORAGE_KEY,
@@ -164,6 +165,7 @@ export function OrderSummary({ subtotal, mode }: OrderSummaryProps) {
         ORDERS_STORAGE_KEY,
         JSON.stringify([order, ...existing])
       )
+      invalidateOrdersCache()
 
       if (pointsRedeemed > 0) {
         spendPoints(pointsRedeemed)
