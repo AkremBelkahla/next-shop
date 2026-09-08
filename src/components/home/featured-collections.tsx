@@ -22,7 +22,7 @@ export async function FeaturedCollections() {
             <Link
               key={collection.id}
               href={`/collections/${collection.slug}`}
-              className="group relative isolate flex aspect-[4/3] overflow-hidden rounded-2xl bg-muted shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group relative isolate flex aspect-[4/3] overflow-hidden rounded-none bg-muted shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               {collection.image && (
                 <Image

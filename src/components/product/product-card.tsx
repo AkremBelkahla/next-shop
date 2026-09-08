@@ -43,7 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href={`/products/${product.slug}`} className="group">
-      <Card className="gap-0 overflow-hidden rounded-2xl border-border/60 p-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <Card className="gap-0 overflow-hidden rounded-none border-border/60 p-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div className="relative aspect-square overflow-hidden bg-muted">
           {firstImage && (
             <Image

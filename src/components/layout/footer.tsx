@@ -87,9 +87,6 @@ export function Footer() {
           <Separator className="my-8" />
 
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Next Shop. All rights reserved.
-            </p>
             <div className="flex gap-6">
               <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">
                 Terms
@@ -104,7 +101,7 @@ export function Footer() {
           </div>
 
           <p className="mt-6 text-center text-xs text-muted-foreground">
-            Développé avec{' '}
+            © {new Date().getFullYear()} Next Shop. All rights reserved. · Developed with{' '}
             <a
               href="https://infinityweb.tn"
               target="_blank"

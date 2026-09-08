@@ -8,7 +8,7 @@ export function PromoBanner() {
   return (
     <section className="py-16 md:py-24">
       <Container>
-        <div className="relative isolate overflow-hidden rounded-3xl bg-primary">
+        <div className="relative isolate overflow-hidden rounded-none bg-primary">
           <Image
             src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80"
             alt=""

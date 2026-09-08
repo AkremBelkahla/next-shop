@@ -1,10 +1,10 @@
 import { Truck, Sparkles, Tag, Star } from 'lucide-react'
 
 const messages = [
-  { icon: Truck, text: 'Livraison offerte dès 50€' },
-  { icon: Tag, text: '-20% avec le code SUMMER20' },
-  { icon: Sparkles, text: 'Nouveautés chaque semaine' },
-  { icon: Star, text: 'Programme fidélité actif — 1 pt par € dépensé' },
+  { icon: Truck, text: 'Free shipping on orders over €50' },
+  { icon: Tag, text: '20% off with code SUMMER20' },
+  { icon: Sparkles, text: 'New arrivals every week' },
+  { icon: Star, text: 'Active loyalty program — 1 pt per €1 spent' },
 ]
 
 export function Topbar() {

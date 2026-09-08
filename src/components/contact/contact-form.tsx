@@ -20,7 +20,7 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-2xl border bg-card p-8 text-center shadow-sm">
+      <div className="flex flex-col items-center gap-3 rounded-none border bg-card p-8 text-center shadow-sm">
         <CheckCircle2 className="h-10 w-10 text-accent" />
         <h2 className="text-lg font-semibold">Message sent</h2>
         <p className="text-sm text-muted-foreground">

@@ -103,7 +103,7 @@ export function HeroSlider() {
                 slideIndex === index ? 'scale-110' : 'scale-100'
               )}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-transparent" />
           </div>
         ))}
       </div>
