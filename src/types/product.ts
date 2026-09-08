@@ -67,3 +67,10 @@ export interface Cart {
   total: number
   itemCount: number
 }
+
+export interface Order {
+  id: string
+  items: CartItem[]
+  total: number
+  createdAt: string
+}

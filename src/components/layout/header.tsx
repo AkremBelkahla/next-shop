@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Menu } from 'lucide-react'
+import { Menu, User } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Logo } from '@/components/ui/logo'
 import { Button } from '@/components/ui/button'
@@ -35,6 +35,11 @@ export function Header() {
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
+            <Button type="button" variant="ghost" size="icon" aria-label="My account" asChild>
+              <Link href="/account">
+                <User className="h-5 w-5" />
+              </Link>
+            </Button>
             <CartButton />
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />

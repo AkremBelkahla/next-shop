@@ -48,7 +48,7 @@ export default function PrivacyPage() {
               <h2 className="text-lg font-semibold text-foreground">4. Data Sharing</h2>
               <p className="mt-2">
                 We share data with trusted service providers strictly for the purpose of
-                fulfilling orders (e.g. payment processing via Stripe, shipping carriers).
+                fulfilling orders (e.g. shipping carriers).
                 These providers are contractually bound to protect your data.
               </p>
             </section>

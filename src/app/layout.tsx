@@ -23,7 +23,7 @@ const cormorant = Cormorant({
 
 export const metadata: Metadata = {
   title: "Next Shop - Modern E-commerce",
-  description: "Modern headless e-commerce built with Next.js, React Server Components, and Stripe",
+  description: "Modern headless e-commerce built with Next.js and React Server Components",
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
 };
 

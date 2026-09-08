@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
-import { createCheckoutSessionAction } from '@/app/actions'
+import { PlaceOrderButton } from '@/components/checkout/place-order-button'
 import { getCart } from '@/lib/cart'
 import { formatPrice } from '@/lib/utils'
 
@@ -80,13 +80,9 @@ export default async function CheckoutPage() {
                   <span>{formatPrice(cart.total)}</span>
                 </div>
               </div>
-              <form action={createCheckoutSessionAction}>
-                <Button size="lg" type="submit" className="w-full">
-                  Continue to Stripe
-                </Button>
-              </form>
+              <PlaceOrderButton />
               <p className="text-center text-xs text-muted-foreground">
-                You will be redirected to Stripe to complete your purchase securely.
+                Demo checkout: no real payment is processed. Your order is saved locally.
               </p>
             </div>
           </div>
