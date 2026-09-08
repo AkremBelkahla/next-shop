@@ -12,7 +12,7 @@ export default function ReturnsPage() {
         <div className="mx-auto max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight">Returns & Refunds</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            We want you to love what you buy. If something isn't right, we're here to help.
+            We want you to love what you buy. If something is not right, we are here to help.
           </p>
 
           <div className="prose prose-sm mt-10 max-w-none space-y-8 text-muted-foreground">

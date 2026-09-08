@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useState, useSyncExternalStore } from 'react'
+import { useCallback, useState, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Tag, X, Sparkles, Truck } from 'lucide-react'
@@ -314,7 +314,7 @@ export function OrderSummary({ subtotal, mode }: OrderSummaryProps) {
         </div>
         {pointsEarned > 0 && (
           <p className="mt-1 text-xs text-muted-foreground">
-            You'll earn {pointsEarned} loyalty points with this order.
+            You will earn {pointsEarned} loyalty points with this order.
           </p>
         )}
       </div>

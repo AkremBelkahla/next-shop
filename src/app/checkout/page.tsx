@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { OrderSummary } from '@/components/checkout/order-summary'
 import { getCart } from '@/lib/cart'
+import { formatPrice } from '@/lib/utils'
 
 export default async function CheckoutPage() {
   const cart = await getCart()

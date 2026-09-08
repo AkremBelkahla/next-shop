@@ -37,8 +37,8 @@ export default function CareersPage() {
             Build the future of commerce with us
           </h1>
           <p className="mt-6 text-lg text-muted-foreground">
-            We're a small team obsessed with craft, speed, and customer experience.
-            We don't have open roles right now, but we're always happy to hear from
+            We are a small team obsessed with craft, speed, and customer experience.
+            We do not have open roles right now, but we are always happy to hear from
             talented people.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function CareersPage() {
         <div className="mx-auto mt-16 max-w-2xl rounded-2xl border bg-muted/40 p-8 text-center">
           <h2 className="text-2xl font-bold tracking-tight">Want to say hello?</h2>
           <p className="mt-3 text-muted-foreground">
-            Send us a message and tell us what you'd like to work on. We read every one.
+            Send us a message and tell us what you would like to work on. We read every one.
           </p>
           <Button size="lg" className="mt-6" asChild>
             <a href="/contact">Get in touch</a>
