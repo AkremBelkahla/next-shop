@@ -41,12 +41,16 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+prima
 /src/generated/prisma
 TODO.md
 AGENTS.md
 .agents
-docs/
+docs/*
 CLAUDE.md
 .windsurf
 .kilo
 .claude
+AGENTS.md
+TODO.md
+CLAUDE.md
