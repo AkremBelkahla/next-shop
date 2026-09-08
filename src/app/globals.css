@@ -124,3 +124,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/*  Topbar marquee                                                            */
+/* -------------------------------------------------------------------------- */
+
+@keyframes topbar-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.topbar-marquee {
+  animation: topbar-marquee 28s linear infinite;
+}
+
+.topbar-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar-marquee {
+    animation: none;
+  }
+}

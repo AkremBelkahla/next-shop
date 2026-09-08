@@ -60,10 +60,44 @@ export default function CheckoutSuccessPage() {
                 </div>
               ))}
             </div>
+
+            {order.subtotal != null && order.subtotal !== order.total && (
+              <div className="mt-3 space-y-1 border-t pt-3 text-sm text-accent">
+                {order.subtotal != null && (
+                  <div className="flex justify-between">
+                    <span>Subtotal</span>
+                    <span>{formatPrice(order.subtotal)}</span>
+                  </div>
+                )}
+                {order.couponCode && (
+                  <div className="flex justify-between">
+                    <span>Coupon ({order.couponCode})</span>
+                    <span>−{formatPrice(order.couponDiscount ?? 0)}</span>
+                  </div>
+                )}
+                {order.pointsRedeemed ? (
+                  <div className="flex justify-between">
+                    <span>Points ({order.pointsRedeemed} pts)</span>
+                    <span>−{formatPrice(order.pointsDiscount ?? 0)}</span>
+                  </div>
+                ) : null}
+              </div>
+            )}
+
             <div className="mt-4 flex justify-between border-t pt-4 font-semibold">
               <span>Total</span>
               <span>{formatPrice(order.total)}</span>
             </div>
+
+            {order.pointsEarned ? (
+              <div className="mt-4 flex items-center gap-2 rounded-md bg-accent/10 px-3 py-2 text-sm">
+                <Sparkles className="h-4 w-4 text-accent" />
+                <span>
+                  You earned <strong>{order.pointsEarned}</strong> loyalty points.
+                  New balance: <strong>{points}</strong> pts.
+                </span>
+              </div>
+            ) : null}
           </div>
         )}
 

@@ -3,6 +3,7 @@ import { DM_Sans, Cormorant } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { Topbar } from "@/components/layout/topbar";
 import { ThemeScript } from "@/components/theme/theme-script";
 import { BackToTop } from "@/components/ui/back-to-top";
 import { CookieConsent } from "@/components/ui/cookie-consent";
@@ -41,6 +42,7 @@ export default async function RootLayout({
       </head>
       <body className={`${dmSans.variable} ${cormorant.variable} font-sans antialiased`}>
         <CartProvider initialCart={cart}>
+          <Topbar />
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
