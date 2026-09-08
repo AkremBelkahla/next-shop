@@ -193,7 +193,7 @@ export function OrderSummary({ subtotal, mode }: OrderSummaryProps) {
       {/* Coupon input */}
       <div className="space-y-2">
         {appliedCouponCode !== '' ? (
-          <div className="flex items-center justify-between rounded-md border bg-muted/40 px-3 py-2">
+          <div className="flex items-center justify-between rounded-none border bg-muted/40 px-3 py-2">
             <div className="flex items-center gap-2">
               <Tag className="h-4 w-4 text-accent" />
               <span className="text-sm font-medium">{appliedCouponCode}</span>
@@ -247,7 +247,7 @@ export function OrderSummary({ subtotal, mode }: OrderSummaryProps) {
 
       {/* Loyalty points redeem */}
       {points >= MIN_REDEEM_POINTS && (
-        <div className="rounded-md border bg-muted/40 px-3 py-3">
+        <div className="rounded-none border bg-muted/40 px-3 py-3">
           <label className="flex cursor-pointer items-start gap-3">
             <input
               type="checkbox"

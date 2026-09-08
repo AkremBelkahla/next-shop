@@ -95,7 +95,7 @@ export function CartSidebar() {
                       </p>
                     )}
                     <div className="mt-auto flex items-center justify-between pt-2">
-                      <div className="flex items-center rounded-md border">
+                      <div className="flex items-center rounded-none border">
                         <button
                           type="button"
                           aria-label="Decrease quantity"

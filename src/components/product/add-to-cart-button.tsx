@@ -51,7 +51,7 @@ export function AddToCartButton({
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-4">
-        <div className="flex items-center rounded-lg border">
+        <div className="flex items-center rounded-none border">
           <Button
             variant="ghost"
             size="icon"

@@ -41,6 +41,17 @@ export default function ContactPage() {
 
           <ContactForm />
         </div>
+
+        {/* Map */}
+        <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-none border shadow-sm">
+          <iframe
+            title="Store location"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=2.2952%2C48.8386%2C2.3052%2C48.8436&layer=mapnik&marker=48.8411%2C2.3002"
+            className="h-[400px] w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </Container>
     </div>
   )

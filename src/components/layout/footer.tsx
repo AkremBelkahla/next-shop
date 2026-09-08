@@ -86,31 +86,28 @@ export function Footer() {
 
           <Separator className="my-8" />
 
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <div className="flex gap-6">
-              <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">
-                Terms
-              </Link>
-              <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">
-                Privacy
-              </Link>
-              <Link href="/legal-notice" className="text-sm text-muted-foreground hover:text-foreground">
-                Legal Notice
-              </Link>
-            </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center text-xs text-muted-foreground">
+            <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">
+              Terms
+            </Link>
+            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">
+              Privacy
+            </Link>
+            <Link href="/legal-notice" className="text-sm text-muted-foreground hover:text-foreground">
+              Legal Notice
+            </Link>
+            <span className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} Next Shop. All rights reserved. · Developed with{' '}
+              <a
+                href="https://infinityweb.tn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground/80 underline underline-offset-2 transition-colors hover:text-foreground"
+              >
+                infinityweb.tn
+              </a>
+            </span>
           </div>
-
-          <p className="mt-6 text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Next Shop. All rights reserved. · Developed with{' '}
-            <a
-              href="https://infinityweb.tn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-foreground/80 underline underline-offset-2 transition-colors hover:text-foreground"
-            >
-              infinityweb.tn
-            </a>
-          </p>
         </div>
       </Container>
     </footer>

@@ -90,7 +90,7 @@ export default function CheckoutSuccessPage() {
             </div>
 
             {order.pointsEarned ? (
-              <div className="mt-4 flex items-center gap-2 rounded-md bg-accent/10 px-3 py-2 text-sm">
+              <div className="mt-4 flex items-center gap-2 rounded-none bg-accent/10 px-3 py-2 text-sm">
                 <Sparkles className="h-4 w-4 text-accent" />
                 <span>
                   You earned <strong>{order.pointsEarned}</strong> loyalty points.
