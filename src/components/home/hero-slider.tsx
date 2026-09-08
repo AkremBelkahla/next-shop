@@ -78,7 +78,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-muted/50 py-20 md:py-32"
+      className="relative isolate overflow-hidden bg-muted/50 py-12 md:py-20"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -116,7 +116,7 @@ export function HeroSlider() {
           <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent">
             {activeSlide.eyebrow}
           </span>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-6xl">
+          <h1 className="mt-4 font-serif text-5xl font-semibold tracking-tight sm:text-7xl">
             {activeSlide.title}
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">

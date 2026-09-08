@@ -138,7 +138,9 @@ const rawProducts: RawProduct[] = [
     createdAt: now,
     updatedAt: now,
     images: [
-      { url: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800', alt: 'Canvas Tote Bag', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800', alt: 'Canvas Tote Bag - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1574365569389-a10d488ca3fb?w=800', alt: 'Canvas Tote Bag - Folded', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800', alt: 'Canvas Tote Bag - Detail', position: 2 },
     ],
     variants: [
       { title: 'Natural', sku: 'CTB-NAT', price: 3900, inventory: 50, options: { color: 'Natural' } },
@@ -158,7 +160,9 @@ const rawProducts: RawProduct[] = [
     createdAt: now,
     updatedAt: now,
     images: [
-      { url: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800', alt: 'Ceramic Mug Set', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800', alt: 'Ceramic Mug Set - Full Set', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1542556398-95fb5b9f9b48?w=800', alt: 'Ceramic Mug Set - Pair', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1687158179173-b9f3eac1fde9?w=800', alt: 'Ceramic Mug Set - On Table', position: 2 },
     ],
     variants: [
       { title: 'Set of 4', sku: 'CMS-4', price: 4900, inventory: 25, options: { quantity: '4' } },
@@ -177,7 +181,9 @@ const rawProducts: RawProduct[] = [
     createdAt: now,
     updatedAt: now,
     images: [
-      { url: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=800', alt: 'Premium Notebook', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=800', alt: 'Premium Notebook - Cover', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1581431886211-6b932f8367f2?w=800', alt: 'Premium Notebook - On Desk', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1554757387-fa0367573d09?w=800', alt: 'Premium Notebook - Open Pages', position: 2 },
     ],
     variants: [
       { title: 'Black', sku: 'PN-BLK', price: 2900, inventory: 60, options: { color: 'Black' } },
@@ -219,7 +225,9 @@ const rawProducts: RawProduct[] = [
     createdAt: now,
     updatedAt: now,
     images: [
-      { url: 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800', alt: 'Merino Wool Scarf', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800', alt: 'Merino Wool Scarf - Full View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1491245257527-395e9c480145?w=800', alt: 'Merino Wool Scarf - Folded', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1601379327700-05347ab58e57?w=800', alt: 'Merino Wool Scarf - Detail', position: 2 },
     ],
     variants: [
       { title: 'Charcoal', sku: 'WS-CHR', price: 5900, inventory: 40, options: { color: 'Charcoal' } },
@@ -240,7 +248,9 @@ const rawProducts: RawProduct[] = [
     createdAt: now,
     updatedAt: now,
     images: [
-      { url: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800', alt: 'Stainless Steel Water Bottle', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800', alt: 'Stainless Steel Water Bottle - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1544003484-3cd181d17917?w=800', alt: 'Stainless Steel Water Bottle - Black', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1605714312496-01e90cb509cc?w=800', alt: 'Stainless Steel Water Bottle - White', position: 2 },
     ],
     variants: [
       { title: 'Matte Black', sku: 'WB-BLK', price: 3500, inventory: 70, options: { color: 'Matte Black' } },
@@ -303,7 +313,9 @@ const rawProducts: RawProduct[] = [
     createdAt: now,
     updatedAt: now,
     images: [
-      { url: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=800', alt: 'Ribbed Wool Beanie', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=800', alt: 'Ribbed Wool Beanie - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=800', alt: 'Ribbed Wool Beanie - Colors', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1612887726773-e64e20cf08fe?w=800', alt: 'Ribbed Wool Beanie - Detail', position: 2 },
     ],
     variants: [
       { title: 'Charcoal', sku: 'RWB-CHR', price: 3200, inventory: 50, options: { color: 'Charcoal' } },
@@ -324,7 +336,9 @@ const rawProducts: RawProduct[] = [
     createdAt: now,
     updatedAt: now,
     images: [
-      { url: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800', alt: 'Full-Grain Leather Belt', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800', alt: 'Full-Grain Leather Belt - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1711443982852-b3df5c563448?w=800', alt: 'Full-Grain Leather Belt - Flat Lay', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1637868796504-32f45a96d5a0?w=800', alt: 'Full-Grain Leather Belt - Styled', position: 2 },
     ],
     variants: [
       { title: 'Brown / 32"', sku: 'LB-BRN-32', price: 4500, inventory: 25, options: { color: 'Brown', size: '32"' } },
@@ -333,6 +347,236 @@ const rawProducts: RawProduct[] = [
       { title: 'Black / 34"', sku: 'LB-BLK-34', price: 4500, inventory: 25, options: { color: 'Black', size: '34"' } },
     ],
     collectionSlugs: ['bestsellers', 'accessories', 'sale'],
+  },
+  {
+    id: 'prod_leather-crossbody-bag',
+    slug: 'leather-crossbody-bag',
+    title: 'Leather Crossbody Bag',
+    description:
+      'Compact crossbody bag in soft full-grain leather with an adjustable strap and magnetic flap closure. Fits daily essentials without the bulk, with an interior zip pocket for cards and keys.',
+    price: 9900,
+    compareAtPrice: 12900,
+    featured: true,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1600857062241-98e5dba7f214?w=800', alt: 'Leather Crossbody Bag - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1605733513597-a8f8341084e6?w=800', alt: 'Leather Crossbody Bag - Detail', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1473188588951-666fce8e7c68?w=800', alt: 'Leather Crossbody Bag - Lifestyle', position: 2 },
+    ],
+    variants: [
+      { title: 'Brown', sku: 'CCB-BRN', price: 9900, inventory: 30, options: { color: 'Brown' } },
+      { title: 'Black', sku: 'CCB-BLK', price: 9900, inventory: 28, options: { color: 'Black' } },
+    ],
+    collectionSlugs: ['new-arrivals', 'sale'],
+  },
+  {
+    id: 'prod_wool-peacoat',
+    slug: 'wool-peacoat',
+    title: 'Wool Peacoat',
+    description:
+      'Tailored double-breasted peacoat in a heavyweight wool blend. Structured shoulders, notch lapels, and a full satin lining keep it sharp from office to evening.',
+    price: 24900,
+    compareAtPrice: null,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1608635680046-aebf91c1a9c8?w=800', alt: 'Wool Peacoat - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1737508945707-ebdccee97cc5?w=800', alt: 'Wool Peacoat - Styled', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1606453860825-29443dab3893?w=800', alt: 'Wool Peacoat - Detail', position: 2 },
+    ],
+    variants: [
+      { title: 'Camel / S', sku: 'WP-CML-S', price: 24900, inventory: 12, options: { color: 'Camel', size: 'S' } },
+      { title: 'Camel / M', sku: 'WP-CML-M', price: 24900, inventory: 15, options: { color: 'Camel', size: 'M' } },
+      { title: 'Charcoal / M', sku: 'WP-CHR-M', price: 24900, inventory: 15, options: { color: 'Charcoal', size: 'M' } },
+      { title: 'Charcoal / L', sku: 'WP-CHR-L', price: 24900, inventory: 10, options: { color: 'Charcoal', size: 'L' } },
+    ],
+    collectionSlugs: ['bestsellers', 'new-arrivals'],
+  },
+  {
+    id: 'prod_canvas-sneakers',
+    slug: 'canvas-sneakers',
+    title: 'Canvas Low-Top Sneakers',
+    description:
+      'Everyday low-top sneakers in durable cotton canvas with a cushioned insole and rubber sole. A wardrobe staple that pairs with everything from denim to tailored trousers.',
+    price: 7900,
+    compareAtPrice: 9900,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1562105962-2fbaaf107fe3?w=800', alt: 'Canvas Low-Top Sneakers - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1676379760823-ebf91f45de0b?w=800', alt: 'Canvas Low-Top Sneakers - Pair', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1496202703211-aa28e9500c30?w=800', alt: 'Canvas Low-Top Sneakers - Detail', position: 2 },
+    ],
+    variants: [
+      { title: 'White / 40', sku: 'CS-WHT-40', price: 7900, inventory: 20, options: { color: 'White', size: '40' } },
+      { title: 'White / 42', sku: 'CS-WHT-42', price: 7900, inventory: 22, options: { color: 'White', size: '42' } },
+      { title: 'Black / 40', sku: 'CS-BLK-40', price: 7900, inventory: 18, options: { color: 'Black', size: '40' } },
+      { title: 'Black / 42', sku: 'CS-BLK-42', price: 7900, inventory: 20, options: { color: 'Black', size: '42' } },
+    ],
+    collectionSlugs: ['bestsellers', 'sale'],
+  },
+  {
+    id: 'prod_silk-pocket-square',
+    slug: 'silk-pocket-square',
+    title: 'Silk Pocket Square',
+    description:
+      'Hand-rolled-edge pocket square in 100% mulberry silk. A finishing touch for a blazer or suit jacket, sized generously at 33cm x 33cm for classic folds.',
+    price: 2900,
+    compareAtPrice: 3900,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1776127839720-c0ab710d9d37?w=800', alt: 'Silk Pocket Square - Folded', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1777795530497-205664bbd965?w=800', alt: 'Silk Pocket Square - Styled', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1606603050383-42d5c4e72031?w=800', alt: 'Silk Pocket Square - Detail', position: 2 },
+    ],
+    variants: [
+      { title: 'Navy Paisley', sku: 'SPS-NVY', price: 2900, inventory: 40, options: { pattern: 'Navy Paisley' } },
+      { title: 'Burgundy Print', sku: 'SPS-BUR', price: 2900, inventory: 35, options: { pattern: 'Burgundy Print' } },
+    ],
+    collectionSlugs: ['accessories', 'sale'],
+  },
+  {
+    id: 'prod_leather-card-holder',
+    slug: 'leather-card-holder',
+    title: 'Leather Card Holder',
+    description:
+      'Slim card holder in vegetable-tanned leather with 4 card slots and a central pull-tab pocket. Cuts the bulk of a full wallet for a minimalist everyday carry.',
+    price: 3900,
+    compareAtPrice: 4900,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1628483211662-9bcc692c46dc?w=800', alt: 'Leather Card Holder - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1560472355-536de3962603?w=800', alt: 'Leather Card Holder - Detail', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1601592996763-f05c9c80a7f1?w=800', alt: 'Leather Card Holder - Black', position: 2 },
+    ],
+    variants: [
+      { title: 'Cognac', sku: 'LCH-COG', price: 3900, inventory: 45, options: { color: 'Cognac' } },
+      { title: 'Black', sku: 'LCH-BLK', price: 3900, inventory: 40, options: { color: 'Black' } },
+    ],
+    collectionSlugs: ['accessories', 'sale'],
+  },
+  {
+    id: 'prod_denim-trucker-jacket',
+    slug: 'denim-trucker-jacket',
+    title: 'Denim Trucker Jacket',
+    description:
+      'Classic trucker jacket in rigid cotton denim, garment-washed for a broken-in feel. Button-front closure, chest flap pockets, and a timeless boxy fit.',
+    price: 11900,
+    compareAtPrice: null,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=800', alt: 'Denim Trucker Jacket - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=800', alt: 'Denim Trucker Jacket - Detail', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1537465978529-d23b17165b3b?w=800', alt: 'Denim Trucker Jacket - Styled', position: 2 },
+    ],
+    variants: [
+      { title: 'Light Wash / M', sku: 'DTJ-LW-M', price: 11900, inventory: 18, options: { color: 'Light Wash', size: 'M' } },
+      { title: 'Light Wash / L', sku: 'DTJ-LW-L', price: 11900, inventory: 16, options: { color: 'Light Wash', size: 'L' } },
+      { title: 'Dark Wash / M', sku: 'DTJ-DW-M', price: 11900, inventory: 18, options: { color: 'Dark Wash', size: 'M' } },
+      { title: 'Dark Wash / L', sku: 'DTJ-DW-L', price: 11900, inventory: 16, options: { color: 'Dark Wash', size: 'L' } },
+    ],
+    collectionSlugs: ['bestsellers', 'new-arrivals'],
+  },
+  {
+    id: 'prod_cashmere-sweater',
+    slug: 'cashmere-sweater',
+    title: 'Cashmere Knit Sweater',
+    description:
+      'Crew-neck sweater in pure two-ply cashmere, knitted for warmth without the weight. A soft, breathable layer that holds its shape wash after wash.',
+    price: 15900,
+    compareAtPrice: 19900,
+    featured: true,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1631541909061-71e349d1f203?w=800', alt: 'Cashmere Knit Sweater - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1604573824419-289a9a10672c?w=800', alt: 'Cashmere Knit Sweater - Styled', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1636146049394-0924c2b66104?w=800', alt: 'Cashmere Knit Sweater - Detail', position: 2 },
+    ],
+    variants: [
+      { title: 'Oatmeal', sku: 'CSW-OAT', price: 15900, inventory: 25, options: { color: 'Oatmeal' } },
+      { title: 'Charcoal', sku: 'CSW-CHR', price: 15900, inventory: 22, options: { color: 'Charcoal' } },
+      { title: 'Navy', sku: 'CSW-NVY', price: 15900, inventory: 20, options: { color: 'Navy' } },
+    ],
+    collectionSlugs: ['new-arrivals', 'sale'],
+  },
+  {
+    id: 'prod_leather-driving-gloves',
+    slug: 'leather-driving-gloves',
+    title: 'Leather Driving Gloves',
+    description:
+      'Supple lambskin driving gloves with a knuckle vent and snap-strap wrist closure. Unlined palm for grip and feel, finished with contrast stitching.',
+    price: 5900,
+    compareAtPrice: 7500,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1643650374762-196c86358df3?w=800', alt: 'Leather Driving Gloves - Styled', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1617118602199-d3c05ae37ed8?w=800', alt: 'Leather Driving Gloves - Detail', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1549396555-3d107fd70c85?w=800', alt: 'Leather Driving Gloves - Colors', position: 2 },
+    ],
+    variants: [
+      { title: 'Brown / M', sku: 'LDG-BRN-M', price: 5900, inventory: 30, options: { color: 'Brown', size: 'M' } },
+      { title: 'Brown / L', sku: 'LDG-BRN-L', price: 5900, inventory: 28, options: { color: 'Brown', size: 'L' } },
+      { title: 'Black / M', sku: 'LDG-BLK-M', price: 5900, inventory: 30, options: { color: 'Black', size: 'M' } },
+      { title: 'Black / L', sku: 'LDG-BLK-L', price: 5900, inventory: 28, options: { color: 'Black', size: 'L' } },
+    ],
+    collectionSlugs: ['accessories', 'sale'],
+  },
+  {
+    id: 'prod_knit-throw-blanket',
+    slug: 'knit-throw-blanket',
+    title: 'Chunky Knit Throw Blanket',
+    description:
+      'Oversized throw in a chunky cable knit, woven from a soft acrylic-wool blend. Adds texture and warmth to a sofa or bed, measuring 130cm x 170cm.',
+    price: 6500,
+    compareAtPrice: 8500,
+    featured: false,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1674475760738-8c7af859f821?w=800', alt: 'Chunky Knit Throw Blanket - Lifestyle', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1600369672770-985fd30004eb?w=800', alt: 'Chunky Knit Throw Blanket - Detail', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1600369672890-ac00f1907858?w=800', alt: 'Chunky Knit Throw Blanket - Color', position: 2 },
+    ],
+    variants: [
+      { title: 'Ivory', sku: 'KTB-IVR', price: 6500, inventory: 24, options: { color: 'Ivory' } },
+      { title: 'Sage', sku: 'KTB-SGE', price: 6500, inventory: 20, options: { color: 'Sage' } },
+      { title: 'Charcoal', sku: 'KTB-CHR', price: 6500, inventory: 22, options: { color: 'Charcoal' } },
+    ],
+    collectionSlugs: ['sale'],
+  },
+  {
+    id: 'prod_structured-tote-bag',
+    slug: 'structured-tote-bag',
+    title: 'Structured Tote Bag',
+    description:
+      'Work-ready tote in structured vegan leather with a reinforced base and magnetic top closure. Fits a 15" laptop, with an interior organizer pocket.',
+    price: 8900,
+    compareAtPrice: null,
+    featured: true,
+    createdAt: now,
+    updatedAt: now,
+    images: [
+      { url: 'https://images.unsplash.com/photo-1614179689702-355944cd0918?w=800', alt: 'Structured Tote Bag - Front View', position: 0 },
+      { url: 'https://images.unsplash.com/photo-1572196284554-4e321b0e7e0b?w=800', alt: 'Structured Tote Bag - Detail', position: 1 },
+      { url: 'https://images.unsplash.com/photo-1654707636750-ab67a11b21b7?w=800', alt: 'Structured Tote Bag - Lifestyle', position: 2 },
+    ],
+    variants: [
+      { title: 'Black', sku: 'STB-BLK', price: 8900, inventory: 35, options: { color: 'Black' } },
+      { title: 'Tan', sku: 'STB-TAN', price: 8900, inventory: 30, options: { color: 'Tan' } },
+    ],
+    collectionSlugs: ['bestsellers', 'accessories'],
   },
 ]
 

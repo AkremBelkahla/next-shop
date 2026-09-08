@@ -32,10 +32,10 @@ export function ValueProps() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group rounded-2xl border border-border/60 bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="group border border-border/60 bg-card p-6 text-center transition-colors duration-300 hover:border-foreground/30"
             >
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-accent/20 to-accent/5 transition-colors duration-300 group-hover:from-accent/30 group-hover:to-accent/10">
-                <feature.icon className="h-6 w-6 text-accent" />
+              <div className="mx-auto flex h-12 w-12 items-center justify-center border border-accent/40 text-accent">
+                <feature.icon className="h-5 w-5" />
               </div>
               <h3 className="mt-4 font-semibold">{feature.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{feature.description}</p>
