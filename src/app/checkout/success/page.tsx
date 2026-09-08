@@ -3,17 +3,23 @@
 import { useSyncExternalStore } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle, Sparkles } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { formatPrice } from '@/lib/utils'
 import { getOrders, getServerOrders, subscribeToOrders } from '@/lib/orders-store'
+import {
+  getPoints,
+  getServerPoints,
+  subscribeToPoints,
+} from '@/lib/loyalty'
 
 export default function CheckoutSuccessPage() {
   const searchParams = useSearchParams()
   const orderId = searchParams.get('order')
   const orders = useSyncExternalStore(subscribeToOrders, getOrders, getServerOrders)
   const order = orders.find((o) => o.id === orderId) ?? null
+  const points = useSyncExternalStore(subscribeToPoints, getPoints, getServerPoints)
 
   return (
     <div className="py-16 md:py-24">

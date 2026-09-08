@@ -2,22 +2,45 @@
 
 import { useSyncExternalStore } from 'react'
 import Link from 'next/link'
-import { PackageOpen } from 'lucide-react'
+import { PackageOpen, Sparkles } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { formatPrice } from '@/lib/utils'
 import { getOrders, getServerOrders, subscribeToOrders } from '@/lib/orders-store'
+import {
+  getPoints,
+  getServerPoints,
+  subscribeToPoints,
+  REDEEM_POINTS_PER_EURO,
+} from '@/lib/loyalty'
 
 export default function AccountPage() {
   const orders = useSyncExternalStore(subscribeToOrders, getOrders, getServerOrders)
+  const points = useSyncExternalStore(subscribeToPoints, getPoints, getServerPoints)
 
   return (
     <div className="py-12 md:py-16">
       <Container>
         <h1 className="text-3xl font-bold tracking-tight">My Account</h1>
         <p className="mt-2 text-muted-foreground">
-          This is a demo store — orders are saved to this browser only, not to a real account.
+          This is a demo store — orders and loyalty points are saved to this browser only, not to a real account.
         </p>
+
+        {/* Loyalty points balance */}
+        <div className="mt-8 flex items-center gap-4 rounded-lg border bg-gradient-to-br from-accent/10 to-accent/5 p-6">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent/15">
+            <Sparkles className="h-6 w-6 text-accent" />
+          </div>
+          <div>
+            <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+              Loyalty Points
+            </p>
+            <p className="text-2xl font-bold">{points} pts</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Earn 1 pt per €1 spent · Redeem {REDEEM_POINTS_PER_EURO} pts = €1 at checkout
+            </p>
+          </div>
+        </div>
 
         <h2 className="mt-10 text-xl font-semibold">Order History</h2>
 
@@ -64,6 +87,29 @@ export default function AccountPage() {
                     </div>
                   ))}
                 </div>
+
+                {(order.couponCode || order.pointsRedeemed) && (
+                  <div className="mt-3 space-y-1 border-t pt-3 text-xs text-accent">
+                    {order.couponCode && (
+                      <div className="flex justify-between">
+                        <span>Coupon ({order.couponCode})</span>
+                        <span>−{formatPrice(order.couponDiscount ?? 0)}</span>
+                      </div>
+                    )}
+                    {order.pointsRedeemed ? (
+                      <div className="flex justify-between">
+                        <span>Points ({order.pointsRedeemed} pts)</span>
+                        <span>−{formatPrice(order.pointsDiscount ?? 0)}</span>
+                      </div>
+                    ) : null}
+                  </div>
+                )}
+
+                {order.pointsEarned ? (
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    +{order.pointsEarned} loyalty points earned
+                  </p>
+                ) : null}
               </div>
             ))}
           </div>

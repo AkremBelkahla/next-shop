@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
+import { OrderSummary } from '@/components/checkout/order-summary'
 import { getCart } from '@/lib/cart'
 import { formatPrice } from '@/lib/utils'
 
@@ -69,31 +70,7 @@ export default async function CartPage() {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="rounded-lg border p-6 space-y-4">
-              <h2 className="text-lg font-semibold">Order Summary</h2>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Subtotal</span>
-                  <span>{formatPrice(cart.total)}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Shipping</span>
-                  <span>Calculated at checkout</span>
-                </div>
-              </div>
-              <div className="border-t pt-4">
-                <div className="flex justify-between font-semibold">
-                  <span>Total</span>
-                  <span>{formatPrice(cart.total)}</span>
-                </div>
-              </div>
-              <Button size="lg" className="w-full" asChild>
-                <Link href="/checkout">Proceed to Checkout</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="w-full" asChild>
-                <Link href="/">Continue Shopping</Link>
-              </Button>
-            </div>
+            <OrderSummary subtotal={cart.total} mode="cart" />
           </div>
         </div>
       </Container>
