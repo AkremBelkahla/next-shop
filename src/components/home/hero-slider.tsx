@@ -78,7 +78,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-muted/50 py-12 md:py-20"
+      className="relative isolate overflow-hidden bg-muted/50 py-12 md:py-20 min-h-[400px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -113,13 +113,13 @@ export function HeroSlider() {
           key={index}
           className="relative mx-auto flex max-w-3xl flex-col items-center text-center animate-in fade-in slide-in-from-bottom-4 duration-700"
         >
-          <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+          <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm text-shadow-hero-sm">
             {activeSlide.eyebrow}
           </span>
-          <h1 className="mt-4 font-serif text-5xl font-semibold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-7xl">
+          <h1 className="mt-4 font-serif text-5xl font-semibold tracking-tight text-white text-shadow-hero sm:text-7xl">
             {activeSlide.title}
           </h1>
-          <p className="mt-6 text-lg leading-8 text-white/95 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+          <p className="mt-6 text-lg leading-8 text-white/95 text-shadow-hero-sm">
             {activeSlide.description}
           </p>
           <div className="mt-10 flex items-center justify-center gap-4">

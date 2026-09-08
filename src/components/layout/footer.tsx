@@ -86,16 +86,18 @@ export function Footer() {
 
           <Separator className="my-8" />
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center text-xs text-muted-foreground">
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">
-              Terms
-            </Link>
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">
-              Privacy
-            </Link>
-            <Link href="/legal-notice" className="text-sm text-muted-foreground hover:text-foreground">
-              Legal Notice
-            </Link>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-xs text-muted-foreground">
+            <div className="flex gap-6">
+              <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">
+                Terms
+              </Link>
+              <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">
+                Privacy
+              </Link>
+              <Link href="/legal-notice" className="text-sm text-muted-foreground hover:text-foreground">
+                Legal Notice
+              </Link>
+            </div>
             <span className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} Next Shop. All rights reserved. · Developed with{' '}
               <a
