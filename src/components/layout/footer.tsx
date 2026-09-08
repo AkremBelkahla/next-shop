@@ -102,6 +102,18 @@ export function Footer() {
               </Link>
             </div>
           </div>
+
+          <p className="mt-6 text-center text-xs text-muted-foreground">
+            Développé avec{' '}
+            <a
+              href="https://infinityweb.tn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground/80 underline underline-offset-2 transition-colors hover:text-foreground"
+            >
+              infinityweb.tn
+            </a>
+          </p>
         </div>
       </Container>
     </footer>

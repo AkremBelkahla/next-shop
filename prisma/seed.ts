@@ -25,7 +25,7 @@ async function main() {
         slug: 'bestsellers',
         title: 'Bestsellers',
         description: 'Our most popular products',
-        image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800',
+        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
         featured: true,
       },
     }),
