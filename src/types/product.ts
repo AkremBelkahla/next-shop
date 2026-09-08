@@ -73,4 +73,11 @@ export interface Order {
   items: CartItem[]
   total: number
   createdAt: string
+  subtotal?: number
+  couponCode?: string
+  couponDiscount?: number
+  freeShipping?: boolean
+  pointsRedeemed?: number
+  pointsDiscount?: number
+  pointsEarned?: number
 }
