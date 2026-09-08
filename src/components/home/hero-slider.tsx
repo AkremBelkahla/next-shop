@@ -34,7 +34,7 @@ const slides: HeroSlide[] = [
     description:
       'From premium leather goods to everyday essentials, explore pieces built with care and designed to stand the test of time.',
     image:
-      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1600&q=80',
+      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80',
     primaryCta: { label: 'Explore Bestsellers', href: '/collections/bestsellers' },
     secondaryCta: { label: 'Shop Accessories', href: '/collections/accessories' },
   },
@@ -78,7 +78,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-muted/50 py-12 md:py-20 min-h-[400px]"
+      className="relative isolate overflow-hidden bg-muted/50 py-12 md:py-20 h-[512px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
