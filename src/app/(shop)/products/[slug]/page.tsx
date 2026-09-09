@@ -55,11 +55,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <PurchasePanel product={product} />
 
             <TrustBadges product={product} />
-
-            <ProductDetailsAccordion product={product} />
           </div>
         </div>
       </Container>
+
+      <section className="border-t py-16 md:py-24">
+        <Container>
+          <h2 className="mb-8 text-2xl font-bold tracking-tight">Product Details</h2>
+          <ProductDetailsAccordion product={product} />
+        </Container>
+      </section>
 
       <RelatedProducts productId={product.id} />
     </div>

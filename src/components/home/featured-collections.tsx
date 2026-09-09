@@ -45,7 +45,7 @@ export async function FeaturedCollections() {
                     </p>
                   )}
                 </div>
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-all duration-300 group-hover:bg-white group-hover:text-foreground">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-colors duration-300 group-hover:bg-white group-hover:text-black">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
               </div>
