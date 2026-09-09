@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { cn } from '@/lib/utils'
 
-interface HeroSlide {
+export interface HeroSlide {
   eyebrow: string
   title: string
   description: string
@@ -17,47 +17,15 @@ interface HeroSlide {
   secondaryCta?: { label: string; href: string }
 }
 
-const slides: HeroSlide[] = [
-  {
-    eyebrow: 'New Season',
-    title: 'Elevate Your Everyday Style',
-    description:
-      'Discover our curated collection of premium products designed for modern living. Quality craftsmanship meets timeless design.',
-    image:
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80',
-    primaryCta: { label: 'Shop New Arrivals', href: '/collections/new-arrivals' },
-    secondaryCta: { label: 'View Bestsellers', href: '/collections/bestsellers' },
-  },
-  {
-    eyebrow: 'Premium Craft',
-    title: 'Crafted to Last, Made to Impress',
-    description:
-      'From premium leather goods to everyday essentials, explore pieces built with care and designed to stand the test of time.',
-    image:
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80',
-    primaryCta: { label: 'Explore Bestsellers', href: '/collections/bestsellers' },
-    secondaryCta: { label: 'Shop Accessories', href: '/collections/accessories' },
-  },
-  {
-    eyebrow: 'Sale',
-    title: 'Limited-Time Offers, Unlimited Style',
-    description:
-      'Save on standout pieces across the store while supplies last. Refresh your everyday carry without breaking the bank.',
-    image:
-      'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&q=80',
-    primaryCta: { label: 'Shop the Sale', href: '/collections/sale' },
-  },
-]
-
 const AUTOPLAY_INTERVAL_MS = 6000
 
-export function HeroSlider() {
+export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
   const [index, setIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
   const goTo = useCallback((next: number) => {
     setIndex(((next % slides.length) + slides.length) % slides.length)
-  }, [])
+  }, [slides.length])
 
   const goToNext = useCallback(() => goTo(index + 1), [goTo, index])
   const goToPrevious = useCallback(() => goTo(index - 1), [goTo, index])
@@ -70,7 +38,7 @@ export function HeroSlider() {
     }, AUTOPLAY_INTERVAL_MS)
 
     return () => clearInterval(timer)
-  }, [isPaused])
+  }, [isPaused, slides.length])
 
   const activeSlide = slides[index]
 
@@ -78,7 +46,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-muted/50 py-12 md:py-20 h-[512px]"
+      className="relative isolate overflow-hidden bg-muted/50 h-[300px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -111,25 +79,25 @@ export function HeroSlider() {
       <Container>
         <div
           key={index}
-          className="relative mx-auto flex max-w-3xl flex-col items-center text-center animate-in fade-in slide-in-from-bottom-4 duration-700"
+          className="relative mx-auto flex h-full max-w-3xl flex-col items-center justify-center text-center animate-in fade-in slide-in-from-bottom-4 duration-700"
         >
           <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm text-shadow-hero-sm">
             {activeSlide.eyebrow}
           </span>
-          <h1 className="mt-4 font-serif text-5xl font-semibold tracking-tight text-white text-shadow-hero sm:text-7xl">
+          <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-white text-shadow-hero sm:text-4xl">
             {activeSlide.title}
           </h1>
-          <p className="mt-6 text-lg leading-8 text-white/95 text-shadow-hero-sm">
+          <p className="mt-2 hidden text-sm leading-6 text-white/95 text-shadow-hero-sm line-clamp-2 sm:block">
             {activeSlide.description}
           </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <Button size="lg" className="shadow-lg shadow-primary/20" asChild>
+          <div className="mt-4 flex items-center justify-center gap-3">
+            <Button size="sm" className="shadow-lg shadow-primary/20" asChild>
               <Link href={activeSlide.primaryCta.href}>
                 {activeSlide.primaryCta.label}
               </Link>
             </Button>
             {activeSlide.secondaryCta && (
-              <Button size="lg" variant="outline" asChild>
+              <Button size="sm" variant="outline" asChild>
                 <Link href={activeSlide.secondaryCta.href}>
                   {activeSlide.secondaryCta.label}
                 </Link>

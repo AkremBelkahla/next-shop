@@ -89,7 +89,7 @@ const CATEGORY_IMAGES: Record<string, string> = {
   'home-decoration': 'https://images.unsplash.com/photo-1513519245088-0e12902e3556?w=800',
   'kitchen-accessories': 'https://images.unsplash.com/photo-1556909114-f6e9ad8d3b6b?w=800',
   laptops: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800',
-  'mens-shirts': 'https://images.unsplash.com/photo-1489987707025-af232967b752?w=800',
+  'mens-shirts': 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800',
   'mens-shoes': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800',
   'mens-watches': 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800',
   'mobile-accessories': 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=800',
@@ -110,6 +110,47 @@ const CATEGORY_IMAGES: Record<string, string> = {
 
 let collectionsCache: Collection[] | null = null
 let productsCache: ProductWithRelations[] | null = null
+
+/* -------------------------------------------------------------------------- */
+/*  Parent category grouping                                                   */
+/* -------------------------------------------------------------------------- */
+
+export interface CollectionGroup {
+  parent: string
+  collections: Collection[]
+}
+
+// Group the 24 dummyjson categories into logical parent categories
+const PARENT_CATEGORIES: { name: string; slugs: string[] }[] = [
+  {
+    name: 'Beauty & Care',
+    slugs: ['beauty', 'fragrances', 'skin-care'],
+  },
+  {
+    name: "Men's Fashion",
+    slugs: ['mens-shirts', 'mens-shoes', 'mens-watches'],
+  },
+  {
+    name: "Women's Fashion",
+    slugs: ['womens-bags', 'womens-dresses', 'womens-jewellery', 'womens-shoes', 'womens-watches'],
+  },
+  {
+    name: 'Electronics',
+    slugs: ['laptops', 'smartphones', 'tablets', 'mobile-accessories'],
+  },
+  {
+    name: 'Home & Living',
+    slugs: ['furniture', 'groceries', 'home-decoration', 'kitchen-accessories'],
+  },
+  {
+    name: 'Sports & Vehicles',
+    slugs: ['sports-accessories', 'motorcycle', 'vehicle'],
+  },
+  {
+    name: 'Accessories',
+    slugs: ['sunglasses', 'tops'],
+  },
+]
 
 /* -------------------------------------------------------------------------- */
 /*  Fetch + map collections                                                    */
@@ -370,4 +411,16 @@ export async function getDummyFeaturedCollections(
     .filter((c) => c.featured)
     .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
     .slice(0, limit)
+}
+
+export async function getDummyGroupedCollections(): Promise<CollectionGroup[]> {
+  const collections = await fetchCollections()
+  const collectionMap = new Map(collections.map((c) => [c.slug, c]))
+
+  return PARENT_CATEGORIES.map((group) => ({
+    parent: group.name,
+    collections: group.slugs
+      .map((slug) => collectionMap.get(slug))
+      .filter((c): c is Collection => c !== undefined),
+  })).filter((group) => group.collections.length > 0)
 }

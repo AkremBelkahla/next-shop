@@ -5,15 +5,16 @@ import { Logo } from '@/components/ui/logo'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { CartButton } from '@/components/layout/cart-button'
+import { MegaMenu, type MegaMenuGroup } from '@/components/layout/mega-menu'
+import { cms } from '@/lib/cms'
 
-const navigation = [
-  { name: 'New Arrivals', href: '/collections/new-arrivals' },
-  { name: 'Bestsellers', href: '/collections/bestsellers' },
-  { name: 'Accessories', href: '/collections/accessories' },
-  { name: 'Sale', href: '/collections/sale' },
-]
+export async function Header() {
+  const groups = await cms.collections.getGrouped()
+  const megaGroups: MegaMenuGroup[] = groups.map((g) => ({
+    parent: g.parent,
+    collections: g.collections.map((c) => ({ slug: c.slug, title: c.title })),
+  }))
 
-export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container>
@@ -21,15 +22,13 @@ export function Header() {
           <div className="flex items-center gap-8">
             <Logo />
             <nav className="hidden md:flex md:gap-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              <MegaMenu groups={megaGroups} />
+              <Link
+                href="/collections"
+                className="rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+              >
+                All Products
+              </Link>
             </nav>
           </div>
 

@@ -2,6 +2,8 @@ import {
   getDummyCollections,
   getDummyCollectionBySlug,
   getDummyFeaturedCollections,
+  getDummyGroupedCollections,
+  type CollectionGroup,
 } from './data/dummyjson'
 import type { Collection, CollectionWithProducts } from '@/types/product'
 
@@ -21,4 +23,8 @@ export async function getFeaturedCollections(
   limit: number = 3
 ): Promise<Collection[]> {
   return getDummyFeaturedCollections(limit)
+}
+
+export async function getGroupedCollections(): Promise<CollectionGroup[]> {
+  return getDummyGroupedCollections()
 }

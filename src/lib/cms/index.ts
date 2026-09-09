@@ -9,6 +9,7 @@ import {
   getCollections,
   getCollectionBySlug,
   getFeaturedCollections,
+  getGroupedCollections,
 } from '../collections'
 
 export const cms = {
@@ -23,6 +24,7 @@ export const cms = {
     getAll: getCollections,
     getBySlug: getCollectionBySlug,
     getFeatured: getFeaturedCollections,
+    getGrouped: getGroupedCollections,
   },
 }
 

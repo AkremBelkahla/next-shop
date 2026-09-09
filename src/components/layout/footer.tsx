@@ -1,28 +1,28 @@
 import Link from 'next/link'
 import { Container } from '@/components/ui/container'
 import { Separator } from '@/components/ui/separator'
+import { cms } from '@/lib/cms'
 
-const footerLinks = {
-  shop: [
-    { name: 'New Arrivals', href: '/collections/new-arrivals' },
-    { name: 'Bestsellers', href: '/collections/bestsellers' },
-    { name: 'Accessories', href: '/collections/accessories' },
-    { name: 'Sale', href: '/collections/sale' },
-  ],
-  company: [
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Careers', href: '/careers' },
-  ],
-  support: [
-    { name: 'Shipping', href: '/shipping' },
-    { name: 'Returns', href: '/returns' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Privacy Policy', href: '/privacy' },
-  ],
-}
+const companyLinks = [
+  { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Careers', href: '/careers' },
+]
 
-export function Footer() {
+const supportLinks = [
+  { name: 'Shipping', href: '/shipping' },
+  { name: 'Returns', href: '/returns' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Privacy Policy', href: '/privacy' },
+]
+
+export async function Footer() {
+  const collections = await cms.collections.getFeatured(4)
+  const shopLinks = collections.map((c) => ({
+    name: c.title,
+    href: `/collections/${c.slug}`,
+  }))
+
   return (
     <footer className="border-t bg-muted/50">
       <Container>
@@ -38,7 +38,7 @@ export function Footer() {
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/80">Shop</h4>
               <ul className="mt-4 space-y-3">
-                {footerLinks.shop.map((link) => (
+                {shopLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -54,7 +54,7 @@ export function Footer() {
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/80">Company</h4>
               <ul className="mt-4 space-y-3">
-                {footerLinks.company.map((link) => (
+                {companyLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
@@ -70,7 +70,7 @@ export function Footer() {
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/80">Support</h4>
               <ul className="mt-4 space-y-3">
-                {footerLinks.support.map((link) => (
+                {supportLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}

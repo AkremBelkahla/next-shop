@@ -3,14 +3,18 @@ import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
+import { cms } from '@/lib/cms'
 
-export function PromoBanner() {
+export async function PromoBanner() {
+  const collections = await cms.collections.getFeatured(1)
+  const collection = collections[0]
+
   return (
     <section className="py-16 md:py-24">
       <Container>
         <div className="relative isolate overflow-hidden rounded-none bg-primary">
           <Image
-            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80"
+            src={collection?.image ?? 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80'}
             alt=""
             fill
             className="object-cover opacity-25"
@@ -27,8 +31,8 @@ export function PromoBanner() {
               Refresh your everyday essentials before the sale ends. New markdowns added weekly.
             </p>
             <Button size="lg" variant="secondary" className="shadow-lg" asChild>
-              <Link href="/collections/sale">
-                Shop the Sale
+              <Link href={collection ? `/collections/${collection.slug}` : '/collections'}>
+                Shop Now
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
