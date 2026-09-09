@@ -30,13 +30,15 @@ export function ProductInfo({ product }: ProductInfoProps) {
               by {product.brand}
             </span>
           )}
-          <div className="flex items-center gap-1">
-            <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-            <span className="text-sm font-medium">{product.rating.toFixed(2)}</span>
-            <span className="text-sm text-muted-foreground">
-              ({product.reviews.length} review{product.reviews.length !== 1 ? 's' : ''})
-            </span>
-          </div>
+          {product.rating !== undefined && (
+            <div className="flex items-center gap-1">
+              <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+              <span className="text-sm font-medium">{product.rating.toFixed(2)}</span>
+              <span className="text-sm text-muted-foreground">
+                ({product.reviews?.length ?? 0} review{(product.reviews?.length ?? 0) !== 1 ? 's' : ''})
+              </span>
+            </div>
+          )}
         </div>
 
         <Price
@@ -50,9 +52,9 @@ export function ProductInfo({ product }: ProductInfoProps) {
         <p className="text-muted-foreground">{product.description}</p>
       </div>
 
-      {product.tags.length > 0 && (
+      {(product.tags?.length ?? 0) > 0 && (
         <div className="flex flex-wrap gap-2">
-          {product.tags.map((tag) => (
+          {product.tags!.map((tag) => (
             <span
               key={tag}
               className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"

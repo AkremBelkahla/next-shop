@@ -13,10 +13,12 @@ export function ProductDetailsAccordion({ product }: ProductDetailsTabsProps) {
   const [activeTab, setActiveTab] = useState(0)
   const defaultVariant = product.variants[0]
 
+  const reviewCount = product.reviews?.length ?? 0
+
   const tabs = [
     { label: 'Specifications', show: true },
     { label: 'Shipping & Returns', show: true },
-    { label: `Reviews (${product.reviews.length})`, show: product.reviews.length > 0 },
+    { label: `Reviews (${reviewCount})`, show: reviewCount > 0 },
   ].filter((t) => t.show)
 
   return (
@@ -65,7 +67,7 @@ export function ProductDetailsAccordion({ product }: ProductDetailsTabsProps) {
                 <dd className="text-sm font-medium">{product.barcode}</dd>
               </div>
             )}
-            {product.weight !== null && (
+            {product.weight !== undefined && product.weight !== null && (
               <div className="flex justify-between gap-2">
                 <dt className="text-sm text-muted-foreground">Weight</dt>
                 <dd className="text-sm font-medium">{product.weight} kg</dd>
@@ -79,11 +81,13 @@ export function ProductDetailsAccordion({ product }: ProductDetailsTabsProps) {
                 </dd>
               </div>
             )}
-            <div className="flex justify-between gap-2">
-              <dt className="text-sm text-muted-foreground">Stock</dt>
-              <dd className="text-sm font-medium">{product.stock} units</dd>
-            </div>
-            {product.minimumOrderQuantity !== null && (
+            {product.stock !== undefined && (
+              <div className="flex justify-between gap-2">
+                <dt className="text-sm text-muted-foreground">Stock</dt>
+                <dd className="text-sm font-medium">{product.stock} units</dd>
+              </div>
+            )}
+            {product.minimumOrderQuantity !== undefined && product.minimumOrderQuantity !== null && (
               <div className="flex justify-between gap-2">
                 <dt className="text-sm text-muted-foreground">Min. order</dt>
                 <dd className="text-sm font-medium">{product.minimumOrderQuantity} units</dd>
@@ -114,9 +118,9 @@ export function ProductDetailsAccordion({ product }: ProductDetailsTabsProps) {
           </div>
         )}
 
-        {activeTab === 2 && product.reviews.length > 0 && (
+        {activeTab === 2 && (product.reviews?.length ?? 0) > 0 && (
           <div className="space-y-4">
-            {product.reviews.map((review, index) => (
+            {product.reviews!.map((review, index) => (
               <div key={index} className="border-b pb-4 last:border-b-0 last:pb-0">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">{review.reviewerName}</span>

@@ -4,7 +4,6 @@ import { PromoBanner } from '@/components/home/promo-banner'
 import { FeaturedProducts } from '@/components/home/featured-products'
 import { ValueProps } from '@/components/home/value-props'
 import { NewsletterCta } from '@/components/home/newsletter-cta'
-import { cms } from '@/lib/cms'
 
 // Hero category slides with curated Unsplash photos
 const HERO_CATEGORIES: {
@@ -42,8 +41,6 @@ const HERO_CATEGORIES: {
 ]
 
 export default async function Home() {
-  const featuredProducts = await cms.products.getFeatured(10)
-
   const slides: HeroSlide[] = HERO_CATEGORIES.map((cat) => ({
     eyebrow: cat.eyebrow,
     title: cat.title,
