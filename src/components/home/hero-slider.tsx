@@ -66,6 +66,7 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
               fill
               priority={slideIndex === 0}
               sizes="100vw"
+              quality={90}
               className={cn(
                 'object-cover transition-transform duration-[6000ms] ease-out',
                 slideIndex === index ? 'scale-110' : 'scale-100'
@@ -76,10 +77,10 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
         ))}
       </div>
 
-      <Container>
+      <Container className="h-full">
         <div
           key={index}
-          className="relative mx-auto flex h-full max-w-3xl flex-col items-center justify-center text-center animate-in fade-in slide-in-from-bottom-4 duration-700"
+          className="relative mx-auto flex h-full max-w-3xl flex-col items-center justify-end pb-16 text-center animate-in fade-in slide-in-from-bottom-4 duration-700"
         >
           <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm text-shadow-hero-sm">
             {activeSlide.eyebrow}
