@@ -1,7 +1,9 @@
 import type {
   Collection,
   Product,
+  ProductDimensions,
   ProductImage,
+  ProductReview,
   ProductVariant,
   ProductWithRelations,
 } from '@/types/product'
@@ -11,6 +13,20 @@ import type {
 /* -------------------------------------------------------------------------- */
 
 const API_BASE = 'https://dummyjson.com'
+
+interface DummyJsonDimensions {
+  width: number
+  height: number
+  depth: number
+}
+
+interface DummyJsonReview {
+  rating: number
+  comment: string
+  date: string
+  reviewerName: string
+  reviewerEmail: string
+}
 
 interface DummyJsonProduct {
   id: number
@@ -24,14 +40,22 @@ interface DummyJsonProduct {
   tags: string[]
   brand?: string
   sku: string
-  thumbnail: string
-  images: string[]
+  weight: number
+  dimensions: DummyJsonDimensions
+  warrantyInformation: string
+  shippingInformation: string
+  availabilityStatus: string
+  reviews: DummyJsonReview[]
+  returnPolicy: string
+  minimumOrderQuantity: number
   meta: {
     createdAt: string
     updatedAt: string
     barcode: string
     qrCode: string
   }
+  thumbnail: string
+  images: string[]
 }
 
 interface DummyJsonCategory {
@@ -190,6 +214,20 @@ function mapProduct(
   const createdAt = new Date(p.meta.createdAt)
   const updatedAt = new Date(p.meta.updatedAt)
 
+  const dimensions: ProductDimensions = {
+    width: p.dimensions.width,
+    height: p.dimensions.height,
+    depth: p.dimensions.depth,
+  }
+
+  const reviews: ProductReview[] = p.reviews.map((r) => ({
+    rating: r.rating,
+    comment: r.comment,
+    date: r.date,
+    reviewerName: r.reviewerName,
+    reviewerEmail: r.reviewerEmail,
+  }))
+
   const baseProduct: Product = {
     id: String(p.id),
     slug: slugify(p.title),
@@ -200,6 +238,19 @@ function mapProduct(
     featured: p.rating >= 4.5,
     createdAt,
     updatedAt,
+    brand: p.brand ?? null,
+    rating: p.rating,
+    stock: p.stock,
+    tags: p.tags,
+    weight: p.weight,
+    dimensions,
+    warrantyInformation: p.warrantyInformation,
+    shippingInformation: p.shippingInformation,
+    availabilityStatus: p.availabilityStatus,
+    returnPolicy: p.returnPolicy,
+    minimumOrderQuantity: p.minimumOrderQuantity,
+    barcode: p.meta.barcode,
+    reviews,
   }
 
   const images: ProductImage[] = [

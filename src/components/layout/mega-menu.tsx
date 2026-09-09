@@ -50,9 +50,9 @@ export function MegaMenu({ groups }: { groups: MegaMenuGroup[] }) {
       </button>
 
       {isOpen && (
-        <div className="absolute left-1/2 top-full z-50 mt-1 -translate-x-1/2">
-          <div className="w-[900px] max-w-[95vw] rounded-none border bg-background shadow-xl">
-            <div className="grid grid-cols-3 gap-x-6 gap-y-1 p-6 sm:grid-cols-4 lg:grid-cols-7">
+        <div className="fixed inset-x-0 top-16 z-50 mx-auto flex justify-center px-4">
+          <div className="w-full max-w-[1000px] rounded-none border bg-background shadow-xl">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-1 p-6 sm:grid-cols-4 lg:grid-cols-7">
               {groups.map((group) => (
                 <div key={group.parent} className="min-w-0">
                   <h4 className="border-b pb-2 text-xs font-semibold uppercase tracking-wider text-foreground/80">

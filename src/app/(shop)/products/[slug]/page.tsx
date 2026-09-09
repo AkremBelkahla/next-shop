@@ -54,7 +54,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
             <PurchasePanel product={product} />
 
-            <TrustBadges />
+            <TrustBadges product={product} />
 
             <ProductDetailsAccordion product={product} />
           </div>

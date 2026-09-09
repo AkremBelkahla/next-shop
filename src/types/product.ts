@@ -1,3 +1,17 @@
+export interface ProductDimensions {
+  width: number
+  height: number
+  depth: number
+}
+
+export interface ProductReview {
+  rating: number
+  comment: string
+  date: string
+  reviewerName: string
+  reviewerEmail: string
+}
+
 export interface Product {
   id: string
   slug: string
@@ -8,6 +22,19 @@ export interface Product {
   featured: boolean
   createdAt: Date
   updatedAt: Date
+  brand: string | null
+  rating: number
+  stock: number
+  tags: string[]
+  weight: number | null
+  dimensions: ProductDimensions | null
+  warrantyInformation: string | null
+  shippingInformation: string | null
+  availabilityStatus: string | null
+  returnPolicy: string | null
+  minimumOrderQuantity: number | null
+  barcode: string | null
+  reviews: ProductReview[]
 }
 
 export interface ProductVariant {
