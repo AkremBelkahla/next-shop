@@ -117,7 +117,7 @@ const CATEGORY_IMAGES: Record<string, string> = {
   'mens-shoes': 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1600&q=80',
   'mens-watches': 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1600&q=80',
   'mobile-accessories': 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=1600&q=80',
-  motorcycle: 'https://images.unsplash.com/photo-1558981806-ec5c4d8c33e3?w=1600&q=80',
+  motorcycle: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1600&q=80',
   'skin-care': 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1600&q=80',
   smartphones: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1600&q=80',
   'sports-accessories': 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1600&q=80',

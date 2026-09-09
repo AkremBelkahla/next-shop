@@ -21,7 +21,7 @@ export async function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Logo />
-            <nav className="hidden md:flex md:gap-1">
+            <nav className="hidden items-center md:flex md:gap-1">
               <MegaMenu groups={megaGroups} />
               <Link
                 href="/collections"
@@ -29,10 +29,31 @@ export async function Header() {
               >
                 All Products
               </Link>
+              <Link
+                href="/collections?filter=deals"
+                className="rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+              >
+                Deals
+              </Link>
+              <Link
+                href="/about"
+                className="rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className="rounded-full px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+              >
+                Contact
+              </Link>
             </nav>
           </div>
 
           <div className="flex items-center gap-2">
+            <Button variant="default" size="sm" className="hidden md:inline-flex" asChild>
+              <Link href="/collections">Shop Now</Link>
+            </Button>
             <ThemeToggle />
             <Button type="button" variant="ghost" size="icon" aria-label="My account" asChild>
               <Link href="/account">
