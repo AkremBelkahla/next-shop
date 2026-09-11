@@ -22,9 +22,13 @@ export function PurchasePanel({ product }: PurchasePanelProps) {
     selectedVariant !== undefined &&
     selectedVariant.inventory === 0
 
+  const hasSelectableVariants =
+    product.variants.length > 1 ||
+    product.variants.some((v) => v.title.toLowerCase() !== 'default')
+
   return (
     <>
-      {product.variants.length > 0 && (
+      {hasSelectableVariants && (
         <>
           <VariantSelector
             variants={product.variants}

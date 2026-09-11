@@ -56,8 +56,8 @@ export function CookieConsent() {
     >
       <Container>
         <div className="flex flex-col items-center gap-3 py-3 sm:flex-row sm:justify-between">
-          <div className="flex items-start gap-3 text-sm text-muted-foreground sm:items-center">
-            <Cookie className="mt-0.5 h-5 w-5 shrink-0 text-accent sm:mt-0" />
+          <div className="flex items-start gap-2 text-xs text-muted-foreground sm:items-center sm:gap-3 sm:text-sm">
+            <Cookie className="mt-0.5 h-4 w-4 shrink-0 text-accent sm:mt-0 sm:h-5 sm:w-5" />
             <p>
               We use cookies to enhance your experience and analyze site traffic. By
               continuing, you agree to our{' '}

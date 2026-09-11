@@ -91,10 +91,10 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
           <p className="mt-2 hidden text-sm leading-6 text-white/95 text-shadow-hero-sm line-clamp-2 sm:block">
             {activeSlide.description}
           </p>
-          <div className="mt-4 flex items-center justify-center gap-3">
+          <div className="mt-4 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center">
             <Button
-              size="sm"
-              className="bg-white text-black shadow-lg shadow-black/20 hover:bg-white/90"
+              size="default"
+              className="w-full bg-white text-black shadow-lg shadow-black/20 hover:bg-white/90 sm:w-auto"
               asChild
             >
               <Link href={activeSlide.primaryCta.href}>
@@ -103,9 +103,9 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
             </Button>
             {activeSlide.secondaryCta && (
               <Button
-                size="sm"
+                size="default"
                 variant="outline"
-                className="border-white bg-transparent text-white hover:bg-white hover:text-black"
+                className="w-full border-white bg-transparent text-white hover:bg-white hover:text-black sm:w-auto"
                 asChild
               >
                 <Link href={activeSlide.secondaryCta.href}>

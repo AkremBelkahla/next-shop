@@ -27,7 +27,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const primaryCollection = product.collections[0]
 
   return (
-    <div className="py-8 md:py-12">
+    <div className="py-8 pb-16 md:py-12 md:pb-24">
       <Container>
         <Breadcrumb
           items={[

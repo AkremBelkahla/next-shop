@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { ShoppingCart } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { OrderSummary } from '@/components/checkout/order-summary'
@@ -16,14 +17,17 @@ export default async function CartPage() {
 
   if (cart.items.length === 0) {
     return (
-      <div className="py-16 md:py-24">
+      <div className="py-24 md:py-32">
         <Container>
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight">Your cart is empty</h1>
+          <div className="mx-auto flex max-w-lg flex-col items-center text-center">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-muted">
+              <ShoppingCart className="h-10 w-10 text-foreground" />
+            </div>
+            <h1 className="mt-8 text-3xl font-bold tracking-tight">Your cart is empty</h1>
             <p className="mt-4 text-lg text-muted-foreground">
               Start shopping to add items to your cart
             </p>
-            <Button size="lg" className="mt-8" asChild>
+            <Button size="lg" className="mt-8 w-full sm:w-auto" asChild>
               <Link href="/">Continue Shopping</Link>
             </Button>
           </div>
@@ -36,19 +40,19 @@ export default async function CartPage() {
     <div className="py-12 md:py-16">
       <Container>
         <h1 className="text-3xl font-bold tracking-tight">Shopping Cart</h1>
-        
+
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <div className="space-y-4">
               {cart.items.map((item) => (
                 <div key={`${item.productId}-${item.variantId}`} className="flex gap-4 rounded-none border p-4">
-                  <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-none bg-muted">
+                  <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-none bg-white">
                     {item.image && (
                       <Image
                         src={item.image}
                         alt={item.title}
                         fill
-                        className="object-cover"
+                        className="object-contain p-2"
                         sizes="96px"
                       />
                     )}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Star } from 'lucide-react'
+import { Star, Ruler, Truck } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { ProductWithRelations } from '@/types/product'
 
@@ -16,33 +16,37 @@ export function ProductDetailsAccordion({ product }: ProductDetailsTabsProps) {
   const reviewCount = product.reviews?.length ?? 0
 
   const tabs = [
-    { label: 'Specifications', show: true },
-    { label: 'Shipping & Returns', show: true },
-    { label: `Reviews (${reviewCount})`, show: reviewCount > 0 },
+    { label: 'Specifications', icon: Ruler, show: true },
+    { label: 'Shipping & Returns', icon: Truck, show: true },
+    { label: `Reviews (${reviewCount})`, icon: Star, show: reviewCount > 0 },
   ].filter((t) => t.show)
 
   return (
     <div>
       {/* Tab headers — full width */}
       <div className="flex w-full gap-0 border-b">
-        {tabs.map((tab, index) => (
-          <button
-            key={tab.label}
-            type="button"
-            onClick={() => setActiveTab(index)}
-            className={cn(
-              'relative flex-1 px-4 py-2.5 text-center text-sm font-medium transition-colors',
-              activeTab === index
-                ? 'text-foreground'
-                : 'text-muted-foreground hover:text-foreground'
-            )}
-          >
-            {tab.label}
-            {activeTab === index && (
-              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-foreground" />
-            )}
-          </button>
-        ))}
+        {tabs.map((tab, index) => {
+          const Icon = tab.icon
+          return (
+            <button
+              key={tab.label}
+              type="button"
+              onClick={() => setActiveTab(index)}
+              className={cn(
+                'relative flex flex-1 items-center justify-center gap-2 px-4 py-2.5 text-center text-sm font-medium transition-colors',
+                activeTab === index
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
+            >
+              <Icon className="h-4 w-4" />
+              <span>{tab.label}</span>
+              {activeTab === index && (
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-foreground" />
+              )}
+            </button>
+          )
+        })}
       </div>
 
       {/* Tab content */}
