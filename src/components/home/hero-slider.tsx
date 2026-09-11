@@ -82,7 +82,7 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
           key={index}
           className="relative mx-auto flex h-full max-w-3xl flex-col items-center justify-end pb-16 text-center animate-in fade-in slide-in-from-bottom-4 duration-700"
         >
-          <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm text-shadow-hero-sm">
+          <span className="inline-flex items-center rounded-full bg-black/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm text-shadow-hero-sm">
             {activeSlide.eyebrow}
           </span>
           <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-white text-shadow-hero sm:text-4xl">
@@ -92,13 +92,22 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
             {activeSlide.description}
           </p>
           <div className="mt-4 flex items-center justify-center gap-3">
-            <Button size="sm" className="shadow-lg shadow-primary/20" asChild>
+            <Button
+              size="sm"
+              className="bg-white text-black shadow-lg shadow-black/20 hover:bg-white/90"
+              asChild
+            >
               <Link href={activeSlide.primaryCta.href}>
                 {activeSlide.primaryCta.label}
               </Link>
             </Button>
             {activeSlide.secondaryCta && (
-              <Button size="sm" variant="outline" asChild>
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-black"
+                asChild
+              >
                 <Link href={activeSlide.secondaryCta.href}>
                   {activeSlide.secondaryCta.label}
                 </Link>
@@ -138,8 +147,8 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
             aria-current={slideIndex === index}
             onClick={() => goTo(slideIndex)}
             className={cn(
-              'h-2 cursor-pointer rounded-full bg-foreground/30 outline-none transition-all duration-200 focus-visible:ring-[3px] focus-visible:ring-ring/50',
-              slideIndex === index ? 'w-6 bg-foreground' : 'w-2 hover:bg-foreground/50'
+              'h-2.5 cursor-pointer rounded-full bg-white/40 outline-none transition-all duration-200 focus-visible:ring-[3px] focus-visible:ring-ring/50',
+              slideIndex === index ? 'w-8 bg-white' : 'w-2.5 hover:bg-white/70'
             )}
           />
         ))}

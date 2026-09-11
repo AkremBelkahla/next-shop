@@ -15,18 +15,18 @@ export function ProductImages({ images, productTitle }: ProductImagesProps) {
 
   if (images.length === 0) {
     return (
-      <div className="aspect-square w-full bg-muted" />
+      <div className="aspect-square w-full bg-white shadow-sm" />
     )
   }
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-square w-full overflow-hidden rounded-none bg-muted">
+      <div className="relative aspect-square w-full overflow-hidden rounded-none bg-white p-6 shadow-sm">
         <Image
           src={images[selectedImage]?.url || ''}
           alt={images[selectedImage]?.alt || productTitle}
           fill
-          className="object-cover"
+          className="object-contain"
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
         />
@@ -39,7 +39,7 @@ export function ProductImages({ images, productTitle }: ProductImagesProps) {
               key={image.id}
               onClick={() => setSelectedImage(index)}
               className={cn(
-                'relative aspect-square overflow-hidden rounded-none bg-muted transition-all',
+                'relative aspect-square overflow-hidden rounded-none bg-white p-2 transition-all',
                 selectedImage === index
                   ? 'ring-2 ring-primary ring-offset-2'
                   : 'opacity-70 hover:opacity-100'
@@ -49,7 +49,7 @@ export function ProductImages({ images, productTitle }: ProductImagesProps) {
                 src={image.url}
                 alt={image.alt}
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 25vw, 12vw"
               />
             </button>

@@ -44,13 +44,13 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/products/${product.slug}`} className="group">
       <Card className="gap-0 overflow-hidden rounded-none border-border/60 p-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-        <div className="relative aspect-square overflow-hidden bg-muted">
+        <div className="relative aspect-square overflow-hidden bg-white p-4">
           {firstImage && (
             <Image
               src={firstImage.url}
               alt={firstImage.alt}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              className="object-contain transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
             />
           )}
@@ -61,17 +61,17 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
           <Button
             type="button"
-            size="sm"
+            size="icon"
+            aria-label="Add to cart"
             onClick={handleQuickAdd}
             disabled={isAdding}
-            className="absolute inset-x-2 bottom-2 translate-y-2 cursor-pointer gap-2 rounded-full opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+            className="absolute bottom-3 right-3 h-9 w-9 translate-y-2 rounded-full bg-primary text-primary-foreground opacity-0 shadow-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 disabled:opacity-100"
           >
             {isAdding ? (
-              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              <Loader2 className="h-4 w-4 animate-spin" />
             ) : (
-              <ShoppingBag className="h-3.5 w-3.5" />
+              <ShoppingBag className="h-4 w-4" />
             )}
-            {isAdding ? 'Adding...' : 'Add to Cart'}
           </Button>
         </div>
         <div className="p-4">

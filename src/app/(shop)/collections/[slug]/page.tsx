@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Container } from '@/components/ui/container'
-import { ProductGrid } from '@/components/product/product-grid'
+import { CollectionProducts } from '@/components/product/collection-products'
 import { cms } from '@/lib/cms'
 import { generateCollectionMetadata } from '@/lib/seo'
 
@@ -44,7 +44,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
           </p>
         </div>
 
-        <ProductGrid products={collection.products} />
+        <CollectionProducts products={collection.products} />
       </Container>
     </div>
   )

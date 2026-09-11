@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import { Menu, User } from 'lucide-react'
+import { User } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Logo } from '@/components/ui/logo'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { CartButton } from '@/components/layout/cart-button'
 import { MegaMenu, type MegaMenuGroup } from '@/components/layout/mega-menu'
+import { MobileMenu } from '@/components/layout/mobile-menu'
 import { cms } from '@/lib/cms'
 
 export async function Header() {
@@ -19,9 +20,9 @@ export async function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6 lg:gap-8">
             <Logo />
-            <nav className="hidden items-center md:flex md:gap-1">
+            <nav className="hidden items-center md:flex md:gap-0.5">
               <MegaMenu groups={megaGroups} />
               <Link
                 href="/collections"
@@ -50,8 +51,13 @@ export async function Header() {
             </nav>
           </div>
 
-          <div className="flex items-center gap-2">
-            <Button variant="default" size="sm" className="hidden md:inline-flex" asChild>
+          <div className="flex items-center gap-3 md:gap-4">
+            <Button
+              variant="default"
+              size="sm"
+              className="hidden bg-accent text-accent-foreground hover:bg-accent/90 md:inline-flex"
+              asChild
+            >
               <Link href="/collections">Shop Now</Link>
             </Button>
             <ThemeToggle />
@@ -61,9 +67,7 @@ export async function Header() {
               </Link>
             </Button>
             <CartButton />
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-            </Button>
+            <MobileMenu groups={megaGroups} />
           </div>
         </div>
       </Container>

@@ -12,19 +12,18 @@ export function Topbar() {
   const loop = [...messages, ...messages]
 
   return (
-    <div className="relative z-50 overflow-hidden bg-primary text-primary-foreground">
+    <div className="relative z-50 overflow-hidden bg-foreground/95 text-background">
       <div className="flex w-max topbar-marquee">
         {loop.map((message, index) => {
           const Icon = message.icon
           return (
             <div
               key={index}
-              className="flex shrink-0 items-center gap-2 px-6 py-2 text-xs font-medium uppercase tracking-wider"
+              className="flex shrink-0 items-center gap-2.5 border-r border-background/10 px-8 py-2.5 text-xs font-medium"
               aria-hidden={index >= messages.length}
             >
-              <Icon className="h-3.5 w-3.5 shrink-0 opacity-90" />
+              <Icon className="h-4 w-4 shrink-0 opacity-80" />
               <span>{message.text}</span>
-              <span className="ml-6 opacity-40">•</span>
             </div>
           )
         })}

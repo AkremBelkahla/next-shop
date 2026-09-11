@@ -34,7 +34,7 @@ export async function FeaturedCollections() {
                   quality={90}
                 />
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
               <div className="relative mt-auto flex w-full items-end justify-between gap-3 p-6">
                 <div>
                   <h3 className="text-xl font-semibold text-white">
